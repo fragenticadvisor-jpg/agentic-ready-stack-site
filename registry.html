@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent-Access Registry — Which Commercial Software Agents Can Actually Act In | The Agentic Stack</title>
+<meta name="description" content="A dated, evidence-linked registry of 34 commercial and RevOps software vendors, recording which publish an official MCP server, which expose a documented external API, and which allow an external AI agent to write.">
+<link rel="canonical" href="https://agenticreadystack.com/registry.html">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L32PZC9KGH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L32PZC9KGH');
+</script>
+<style>
+.reg-stats{display:flex;flex-wrap:wrap;gap:1.5rem;margin:2rem 0 0;}
+.reg-stat{border-left:2px solid var(--gold);padding:0.2rem 0 0.2rem 1rem;}
+.reg-stat b{font-family:'Spectral',serif;font-size:2rem;color:var(--gold);display:block;line-height:1.1;}
+.reg-stat span{font-size:0.78rem;color:var(--mist);letter-spacing:0.03em;}
+.reg-controls{display:flex;flex-wrap:wrap;gap:0.75rem;margin:0 0 1.25rem;align-items:center;}
+.reg-controls select,.reg-controls input{background:var(--navy2);color:var(--cream);border:1px solid var(--rule);
+  border-radius:3px;padding:0.5rem 0.7rem;font-family:'Barlow',sans-serif;font-size:0.82rem;}
+.reg-controls label{font-size:0.72rem;color:var(--mist);text-transform:uppercase;letter-spacing:0.06em;}
+.reg-count{font-size:0.78rem;color:var(--mist);margin-left:auto;}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;}
+table.reg{border-collapse:collapse;width:100%;min-width:1020px;font-size:0.83rem;}
+table.reg th,table.reg td{padding:0.7rem 0.85rem;text-align:left;border-bottom:1px solid rgba(201,168,76,0.12);vertical-align:top;}
+table.reg thead th{position:sticky;top:0;background:var(--navy3);color:var(--gold);font-weight:600;font-size:0.7rem;
+  text-transform:uppercase;letter-spacing:0.07em;white-space:nowrap;z-index:1;}
+table.reg tbody tr:hover{background:rgba(201,168,76,0.04);}
+table.reg th[scope=row]{font-weight:500;color:var(--cream);white-space:nowrap;}
+table.reg th[scope=row] a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--rule);}
+table.reg th[scope=row] a:hover{color:var(--gold);}
+table.reg td a{color:var(--gold);text-decoration:none;}
+table.reg td a:hover{text-decoration:underline;}
+.nowrap{white-space:nowrap;}
+.dim{color:var(--mist);}
+.note{color:var(--mist);font-size:0.76rem;line-height:1.5;min-width:300px;}
+.pill{display:inline-block;font-size:0.68rem;letter-spacing:0.04em;text-transform:uppercase;
+  padding:0.2rem 0.5rem;border:1px solid var(--rule);border-radius:2px;white-space:nowrap;}
+.pill.ok{color:var(--good);border-color:rgba(111,191,139,0.4);}
+.pill.warn{color:var(--warn);border-color:rgba(217,119,6,0.4);}
+.pill.mid{color:var(--gold);}
+.pill.dim{color:var(--mist);}
+.conf{color:var(--warn);font-size:0.8rem;cursor:help;}
+table.sum{border-collapse:collapse;width:100%;max-width:620px;font-size:0.85rem;margin-top:1rem;}
+table.sum td{padding:0.45rem 0.8rem 0.45rem 0;border-bottom:1px solid rgba(201,168,76,0.12);}
+table.sum td:last-child{text-align:right;color:var(--good);}
+table.sum td.zero{color:var(--warn);}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="inner">
+    <a class="logo" href="/">The <span>Agentic</span> Stack</a>
+    <div class="navlinks">
+      <a href="/#categories">Categories</a>
+      <a href="/registry.html" class="active">Registry</a>
+      <a href="/signal/">Signal</a>
+      <a href="/commercial-readiness.html">Commercial Readiness</a>
+      <a href="/about.html">Methodology</a>
+      <a href="/disclosure.html">Disclosure</a>
+      <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">The Model ↗</a>
+    </div>
+  </nav>
+</header>
+
+<section class="section-narrow" style="padding-bottom:1rem;">
+  <p class="crumb"><a href="/">Home</a> / Agent-Access Registry</p>
+  <p class="section-label">Registry · Updated 21 August 2026</p>
+  <h2 style="max-width:none;">Which commercial software can an AI agent actually act inside?</h2>
+  <p class="section-intro">Not which vendors say "agentic" — which ones publish an interface an external agent can authenticate against and use. Every row below was checked against the vendor's own documentation on the date shown, and links to the specific page the finding rests on. Where we found nothing, we say so rather than leaving it blank.</p>
+  <div class="reg-stats">
+    <div class="reg-stat"><b>18<span style="font-size:1rem;color:var(--mist);"> / 34</span></b><span>publish an official MCP server</span></div>
+    <div class="reg-stat"><b>25<span style="font-size:1rem;color:var(--mist);"> / 34</span></b><span>document external agent write access</span></div>
+    <div class="reg-stat"><b>2</b><span>categories with zero agent interface</span></div>
+  </div>
+</section>
+
+<section class="section-narrow" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+  <p class="callout">The two categories where no vendor ships an agent interface are Pricing &amp; Packaging and Sales Compensation — Layers 3 and 5 of the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>. They are also the two layers the model argues have to change first. Several of those vendors do expose REST APIs an agent can write through; none of them will sell you the interface. You build it yourself, or you don't have one.</p>
+  <table class="sum"><tr><td>GTM &amp; Sales Engagement</td><td class="dim">Layer 2</td><td class=""><b>3</b> / 3</td></tr><tr><td>Marketing Automation</td><td class="dim">Layer 2</td><td class=""><b>5</b> / 5</td></tr><tr><td>CRM &amp; Pipeline</td><td class="dim">Layer 9</td><td class=""><b>2</b> / 3</td></tr><tr><td>Sales Enablement &amp; Revenue Intelligence</td><td class="dim">Layer 4</td><td class=""><b>2</b> / 3</td></tr><tr><td>Customer Success &amp; Adoption</td><td class="dim">Layer 7</td><td class=""><b>3</b> / 5</td></tr><tr><td>Billing &amp; Usage Metering</td><td class="dim">Layer 6 + 8</td><td class=""><b>2</b> / 5</td></tr><tr><td>CPQ</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Pricing &amp; Packaging Strategy</td><td class="dim">Layer 3</td><td class="zero"><b>0</b> / 3</td></tr><tr><td>Sales Compensation &amp; Incentive Management</td><td class="dim">Layer 5</td><td class="zero"><b>0</b> / 4</td></tr></table>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="reg-controls">
+    <label for="fcat">Category</label>
+    <select id="fcat"><option value="">All</option><option value="billing-metering">Billing &amp; Usage Metering</option><option value="cpq">CPQ</option><option value="crm">CRM &amp; Pipeline</option><option value="customer-success">Customer Success &amp; Adoption</option><option value="gtm-sales-engagement">GTM &amp; Sales Engagement</option><option value="marketing-automation">Marketing Automation</option><option value="pricing-strategy">Pricing &amp; Packaging Strategy</option><option value="sales-compensation">Sales Compensation &amp; Incentive Management</option><option value="sales-enablement">Sales Enablement &amp; Revenue Intelligence</option></select>
+    <label for="fmcp">MCP server</label>
+    <select id="fmcp"><option value="">All</option><option value="official">Official</option><option value="vendor_claimed">Claimed, undocumented</option><option value="third_party_only">Third-party only</option><option value="none_found">None found</option></select>
+    <input id="fq" type="search" placeholder="Search vendor…" aria-label="Search vendor">
+    <span class="reg-count" id="fcount"></span>
+  </div>
+  <div class="tablewrap">
+    <table class="reg">
+      <thead><tr><th>Vendor</th><th>Layer / category</th><th>MCP server</th><th>External API</th><th>Agent write access</th><th>Evidence</th><th>Verified</th><th>What we found</th></tr></thead>
+      <tbody id="rtb">
+<tr data-cat="billing-metering" data-mcp="official">
+<th scope="row"><a href="/categories/billing-metering.html">Chargebee</a></th>
+<td class="nowrap dim">L6 + 8 · Billing &amp; Usage Metering</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://www.chargebee.com/docs/billing/2.0/ai-in-chargebee/chargebee-mcp" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Three first-party MCP servers (Knowledge Base, Data Lookup, Onboarding) plus configurable custom servers with per-tool input constraints; Onboarding server writes to test/sandbox sites.</td>
+</tr>
+<tr data-cat="billing-metering" data-mcp="none_found">
+<th scope="row"><a href="/categories/billing-metering.html">DigitalRoute</a></th>
+<td class="nowrap dim">L6 + 8 · Billing &amp; Usage Metering</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://infozone.atlassian.net/wiki/spaces/DAZ/pages/846102529/Accessing+the+UsageCloud+CE+APIs" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Usage Engine Cloud REST APIs with OAuth 2.0 client credentials and explicit write scopes (create:meter_types, create:meters); no MCP server found.</td>
+</tr>
+<tr data-cat="billing-metering" data-mcp="official">
+<th scope="row"><a href="/categories/billing-metering.html">Metronome</a></th>
+<td class="nowrap dim">L6 + 8 · Billing &amp; Usage Metering</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://github.com/Metronome-Industries/metronome-node" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party MCP server (@metronome/mcp) in the official Node SDK, bearer-token auth, exposes writes incl. contracts.create and usage.ingest.</td>
+</tr>
+<tr data-cat="billing-metering" data-mcp="none_found">
+<th scope="row"><a href="/categories/billing-metering.html">Orb</a></th>
+<td class="nowrap dim">L6 + 8 · Billing &amp; Usage Metering</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://docs.withorb.com/api-reference/alert/create-customer-alert-by-external-id" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Public REST API with API-key auth and write endpoints (event ingestion, customer and alert creation); no vendor-published MCP server found in docs, GitHub, npm or MCP directories.</td>
+</tr>
+<tr data-cat="billing-metering" data-mcp="none_found">
+<th scope="row"><a href="/categories/billing-metering.html">m3ter</a></th>
+<td class="nowrap dim">L6 + 8 · Billing &amp; Usage Metering</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://www.m3ter.com/docs/guides/authenticating-with-the-platform/service-authentication" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Full REST API with OAuth client-credentials and documented writes, but no first-party MCP server. Salesforce has signed a definitive agreement to acquire; no completion announcement found.</td>
+</tr>
+<tr data-cat="cpq" data-mcp="third_party_only">
+<th scope="row"><a href="/categories/cpq.html">DealHub</a></th>
+<td class="nowrap dim">L3 · CPQ</td>
+<td><span class="pill dim">Third-party only</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developers.dealhub.io/docs/introduction-to-dealhub-apis" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Documented REST APIs incl. Headless Quotes (generate and publish a quote from a backend system), but neither MCP nor &quot;DealAgent&quot; appears in the developer docs — DealAgent is marketing-side only.</td>
+</tr>
+<tr data-cat="cpq" data-mcp="official">
+<th scope="row"><a href="/categories/cpq.html">PandaDoc</a></th>
+<td class="nowrap dim">L3 · CPQ</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developers.pandadoc.com/docs/getting-started-with-mcp" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party hosted MCP server (mcp.pandadoc.com, EU variant) using OAuth consent; agents read, create and update documents and templates, scoped to the authenticated user's regional account.</td>
+</tr>
+<tr data-cat="cpq" data-mcp="third_party_only">
+<th scope="row"><a href="/categories/cpq.html">Qwilr</a></th>
+<td class="nowrap dim">L3 · CPQ</td>
+<td><span class="pill dim">Third-party only</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://docs.qwilr.com/api-reference/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">REST API with bearer/JWT auth and write endpoints for Pages, taxes and webhooks; no first-party MCP server — only third-party wrappers such as Zapier MCP.</td>
+</tr>
+<tr data-cat="crm" data-mcp="none_found">
+<th scope="row"><a href="/categories/crm.html">Ahoy</a></th>
+<td class="nowrap dim">L9 · CRM &amp; Pipeline</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill dim">None found</span></td>
+<td class="nowrap"><span class="dim">None found</span></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">No developer portal, API reference, webhook documentation or MCP server could be found; the site lists only end-user integrations with no documented programmatic access.</td>
+</tr>
+<tr data-cat="crm" data-mcp="official">
+<th scope="row"><a href="/categories/crm.html">HubSpot</a></th>
+<td class="nowrap dim">L9 · CRM &amp; Pipeline</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party remote MCP server with scope-gated, admin-authorised read and write access to CRM objects and engagements — distinct from the in-product Breeze copilot.</td>
+</tr>
+<tr data-cat="crm" data-mcp="official">
+<th scope="row"><a href="/categories/crm.html">Pipedrive</a></th>
+<td class="nowrap dim">L9 · CRM &amp; Pipeline</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://support.pipedrive.com/en/article/mcp" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Native first-party MCP server with per-client setup guides; access governed by authentication and permission settings, assistants can create or update records.</td>
+</tr>
+<tr data-cat="customer-success" data-mcp="third_party_only">
+<th scope="row"><a href="/categories/customer-success.html">Catalyst (Totango)</a></th>
+<td class="nowrap dim">L7 · Customer Success &amp; Adoption</td>
+<td><span class="pill dim">Third-party only</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://help.catalyst.io/hc/en-us/articles/34021477455508-Catalyst-API-v1" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">No first-party MCP server for Catalyst or the merged Totango entity, only third-party wrappers. Catalyst API v1 is GET-only; Totango's HTTP, Touchpoints and SuccessPlay APIs accept writes via API key with no agent-specific scoping, confirmation or audit trail.</td>
+</tr>
+<tr data-cat="customer-success" data-mcp="vendor_claimed">
+<th scope="row"><a href="/categories/customer-success.html">ChurnZero</a></th>
+<td class="nowrap dim">L7 · Customer Success &amp; Adoption</td>
+<td><span class="pill warn">Claimed, undocumented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill warn">Unclear</span></td>
+<td class="nowrap"><a href="https://churnzero.com/press-release/churnzero-launches-agentic-essentials/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Agentic Essentials and ChurnZero Connect (MCP) remain verifiable only via press release with no first-party technical documentation; the documented REST API is described by ChurnZero as read-only, with writes handled by a separate ingestion API whose agent-scoped use is undocumented.</td>
+</tr>
+<tr data-cat="customer-success" data-mcp="official">
+<th scope="row"><a href="/categories/customer-success.html">Gainsight</a></th>
+<td class="nowrap dim">L7 · Customer Success &amp; Adoption</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://support.gainsight.com/gainsight_nxt/AI_Assistants/MCP_Integration/Admin_Guide/Set_Up_Gainsight_CS_MCP_Server_Integration" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party MCP server with admin setup guide, user-level OAuth 2.1 with PKCE, writes to CTAs, tasks, success plans and timeline activities; deletes, company-field updates, scorecards and admin config excluded. No confirmation prompt or audit trail documented.</td>
+</tr>
+<tr data-cat="customer-success" data-mcp="official">
+<th scope="row"><a href="/categories/customer-success.html">Planhat</a></th>
+<td class="nowrap dim">L7 · Customer Success &amp; Adoption</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://www.planhat.com/developers/ai/mcp-server/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party MCP server with ~10 tools including create/update/delete_model_record; access is the intersection of the OAuth client permissions and the user's own. No automated confirmation step and no audit trail documented.</td>
+</tr>
+<tr data-cat="customer-success" data-mcp="official">
+<th scope="row"><a href="/categories/customer-success.html">Vitally</a></th>
+<td class="nowrap dim">L7 · Customer Success &amp; Adoption</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://docs.vitally.io/en/articles/15862100-vitally-mcp-server" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Hosted first-party MCP connector tied to the user login and respecting Access Groups; creates Notes, Tasks and Custom Object records attributed to the acting user. Docs state write actions run without a confirmation step; no audit log documented.</td>
+</tr>
+<tr data-cat="gtm-sales-engagement" data-mcp="official">
+<th scope="row"><a href="/categories/gtm-sales-engagement.html">Apollo.io</a></th>
+<td class="nowrap dim">L2 · GTM &amp; Sales Engagement</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://docs.apollo.io/docs/apollo-mcp" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party MCP server at mcp.apollo.io over streamable HTTP with OAuth 2.0; writes include creating contacts, adding to sequences and sending one-off emails, scoped to the authorising user's permissions, plan tier and credit balance.</td>
+</tr>
+<tr data-cat="gtm-sales-engagement" data-mcp="official">
+<th scope="row"><a href="/categories/gtm-sales-engagement.html">Clay</a></th>
+<td class="nowrap dim">L2 · GTM &amp; Sales Engagement</td>
+<td><span class="pill ok">Official</span> <span class="conf" title="Supported by first-party pages found via search; direct page fetch failed">±</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developers.clay.com/concepts/mcp" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party remote MCP server documented on Clay's developer and university docs, plus a developer platform API/CLI covering tables, searches and workflows — external access, separate from the internal Claygent agent.</td>
+</tr>
+<tr data-cat="gtm-sales-engagement" data-mcp="official">
+<th scope="row"><a href="/categories/gtm-sales-engagement.html">Outreach</a></th>
+<td class="nowrap dim">L2 · GTM &amp; Sales Engagement</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://support.outreach.io/support/solutions/articles/159000425158-outreach-mcp-server-overview" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Contrary to the earlier finding, Outreach now publishes a first-party MCP server at api.outreach.io/mcp (OAuth 2.1, August 2026 release, Amplify add-on) with read, create and delete tools but deliberately no update/edit tools, governed by the user's existing profile permissions.</td>
+</tr>
+<tr data-cat="marketing-automation" data-mcp="official">
+<th scope="row"><a href="/categories/marketing-automation.html">ActiveCampaign</a></th>
+<td class="nowrap dim">L2 · Marketing Automation</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://help.activecampaign.com/hc/en-us/articles/22566179229596-Get-started-with-the-ActiveCampaign-MCP-Server" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party remote MCP server, per-account URL under Settings &gt; Developer, explicitly supports writes: contacts, lists, tags, custom fields, automations, campaign creation and send.</td>
+</tr>
+<tr data-cat="marketing-automation" data-mcp="official">
+<th scope="row"><a href="/categories/marketing-automation.html">ClickFunnels</a></th>
+<td class="nowrap dim">L2 · Marketing Automation</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://support.myclickfunnels.com/docs/clickfunnels-mcp-server-beta-1" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Own MCP server in technical preview at agents.myclickfunnels.com/mcp with OAuth and a selectable read-only or full-access level; full access creates and updates funnels, pages, contacts, products and more.</td>
+</tr>
+<tr data-cat="marketing-automation" data-mcp="official">
+<th scope="row"><a href="/categories/marketing-automation.html">Customer.io</a></th>
+<td class="nowrap dim">L2 · Marketing Automation</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://docs.customer.io/ai/mcp/get-started/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party MCP server (mcp.customer.io, EU variant) exposing the Journeys UI and CDP Data Pipelines APIs with granular scopes — read, read:sensitive, write, write:live, configure — each user authenticating with their own credentials.</td>
+</tr>
+<tr data-cat="marketing-automation" data-mcp="official">
+<th scope="row"><a href="/categories/marketing-automation.html">Klaviyo</a></th>
+<td class="nowrap dim">L2 · Marketing Automation</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developers.klaviyo.com/en/docs/klaviyo_mcp_server" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party MCP server, GA in remote-hosted form, creating and updating campaigns, flows, profiles and catalogs; scoped by private API key scopes with an optional READ_ONLY mode and Owner/Admin/Manager role requirements.</td>
+</tr>
+<tr data-cat="marketing-automation" data-mcp="official">
+<th scope="row"><a href="/categories/marketing-automation.html">Semrush</a></th>
+<td class="nowrap dim">L2 · Marketing Automation</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developer.semrush.com/api/v4/introduction/semrush-mcp/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party MCP server (OAuth 2.0 or API key) but its tools are read-only by design; scoped write endpoints exist separately on the v4 Projects REST API.</td>
+</tr>
+<tr data-cat="pricing-strategy" data-mcp="none_found">
+<th scope="row"><a href="/categories/pricing-strategy.html">PROS</a></th>
+<td class="nowrap dim">L3 · Pricing &amp; Packaging Strategy</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill dim">None found</span></td>
+<td class="nowrap"><a href="https://connect.pros.com/user/login" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Documentation and API references sit behind the login-gated PROS Connect portal; no public developer docs or MCP announcement found. Note: PROS divested its B2B CPQ/pricing line to Conga and now positions as an airline retailing vendor.</td>
+</tr>
+<tr data-cat="pricing-strategy" data-mcp="none_found">
+<th scope="row"><a href="/categories/pricing-strategy.html">Vendavo</a></th>
+<td class="nowrap dim">L3 · Pricing &amp; Packaging Strategy</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill dim">None found</span></td>
+<td class="nowrap"><a href="https://www.vendavo.com/customer-support/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Only a login-gated documentation portal and support site; no public API/developer reference and no MCP mention. 2026 AI announcements cover an embedded pricing assistant, not external agent access.</td>
+</tr>
+<tr data-cat="pricing-strategy" data-mcp="vendor_claimed">
+<th scope="row"><a href="/categories/pricing-strategy.html">Zilliant</a></th>
+<td class="nowrap dim">L3 · Pricing &amp; Packaging Strategy</td>
+<td><span class="pill warn">Claimed, undocumented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill warn">Unclear</span></td>
+<td class="nowrap"><a href="https://zilliant.com/press-releases/zilliant-launches-agentic-ai-with-industry-first-mcp-server-to-end-spreadsheet-pricing" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Press release announces an MCP server slated for Q1 2026 with no linked technical docs; the public developer docs and Customer API reference contain no MCP pages, so write scoping is unverified.</td>
+</tr>
+<tr data-cat="sales-compensation" data-mcp="third_party_only">
+<th scope="row"><a href="/categories/sales-compensation.html">CaptivateIQ</a></th>
+<td class="nowrap dim">L5 · Sales Compensation &amp; Incentive Management</td>
+<td><span class="pill dim">Third-party only</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developers.captivateiq.com/docs/faqs" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Public first-party developer site with token auth, documented rate limits and write endpoints (Data Worksheet batch update, bulk import), but no first-party MCP server — only third-party connector listings.</td>
+</tr>
+<tr data-cat="sales-compensation" data-mcp="none_found">
+<th scope="row"><a href="/categories/sales-compensation.html">Everstage</a></th>
+<td class="nowrap dim">L5 · Sales Compensation &amp; Incentive Management</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill dim">None found</span></td>
+<td class="nowrap"><a href="https://www.businesswire.com/news/home/20250807870121/en/Everstage-Launches-Agent-Core-The-Agentic-Intelligence-Layer-Unifying-Sales-Performance-Management" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Agent Core describes internal multi-agent orchestration with no mention of MCP, external APIs or a developer portal; no public API reference found.</td>
+</tr>
+<tr data-cat="sales-compensation" data-mcp="none_found">
+<th scope="row"><a href="/categories/sales-compensation.html">QuotaPath</a></th>
+<td class="nowrap dim">L5 · Sales Compensation &amp; Incentive Management</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://api.quotapath.com/docs/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Public REST API covering deals, commissions, paths, teams and users with POST/PUT/PATCH/DELETE writes under workspace API tokens; no first-party MCP server anywhere in QuotaPath docs.</td>
+</tr>
+<tr data-cat="sales-compensation" data-mcp="none_found">
+<th scope="row"><a href="/categories/sales-compensation.html">Spiff (Salesforce)</a></th>
+<td class="nowrap dim">L5 · Sales Compensation &amp; Incentive Management</td>
+<td><span class="pill dim">None found</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developer.salesforce.com/docs/sales/spiff/overview" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">Dedicated Spiff developer site documents creating, updating and deleting commission objects, but no Spiff-specific MCP server or Agentforce action for commission operations — Salesforce MCP support is platform-level and does not name Spiff/ICM.</td>
+</tr>
+<tr data-cat="sales-enablement" data-mcp="official">
+<th scope="row"><a href="/categories/sales-enablement.html">Clari</a></th>
+<td class="nowrap dim">L4 · Sales Enablement &amp; Revenue Intelligence</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill warn">Unclear</span></td>
+<td class="nowrap"><a href="https://developer.clari.com/documentation/external_spec" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party API reference plus a Clari + Salesloft MCP server documented in the Salesloft help centre; the newsroom claims write-back so AI tools can act, but no published scope or permission detail confirms it, and rollout is phased through late summer 2026.</td>
+</tr>
+<tr data-cat="sales-enablement" data-mcp="official">
+<th scope="row"><a href="/categories/sales-enablement.html">Gong</a></th>
+<td class="nowrap dim">L4 · Sales Enablement &amp; Revenue Intelligence</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill mid">Read only</span></td>
+<td class="nowrap"><a href="https://help.gong.io/docs/about-gong-mcp-server" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">First-party Gong MCP server documented in the help centre, described only in query/read terms with no documented write actions; the separate REST API does document scoped writes such as call and CRM data upload.</td>
+</tr>
+<tr data-cat="sales-enablement" data-mcp="vendor_claimed">
+<th scope="row"><a href="/categories/sales-enablement.html">Highspot</a></th>
+<td class="nowrap dim">L4 · Sales Enablement &amp; Revenue Intelligence</td>
+<td><span class="pill warn">Claimed, undocumented</span> <span class="conf" title="Supported by first-party pages found via search; direct page fetch failed">±</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill warn">Unclear</span></td>
+<td class="nowrap"><a href="https://www.highspot.com/product/mcp-server/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">2026-08-21</td>
+<td class="note">The only first-party MCP page is a product/marketing page listing capabilities with no published auth method, scopes, permission model or tool schema, so the write-sounding actions cannot be verified as documented scoped access.</td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.76rem;color:var(--mist);margin-top:1rem;">± marks a finding supported by the vendor's own indexed pages where a direct fetch of the documentation URL failed — slightly lower confidence than the rest.</p>
+</section>
+
+<section class="section-narrow" style="padding-top:0;">
+  <p class="section-label">How to read this</p>
+  <div class="prose">
+    <p><b>MCP server.</b> <i>Official</i> means the vendor publishes and documents its own Model Context Protocol server. <i>Claimed, undocumented</i> means it exists in a press release or a product page with no technical documentation behind it — a distinction we think matters more than any rating on this site. <i>Third-party only</i> means the connector exists but the vendor didn't build it.</p>
+    <p><b>External API.</b> Whether a documented public API exists that a system outside the vendor's own product can authenticate against. An in-product copilot doesn't count.</p>
+    <p><b>Agent write access.</b> Whether an external agent can change something — create a record, update a deal, send a campaign — through documented, scoped, permissioned access. Reading data is table stakes; acting is the test.</p>
+    <p>A vendor scoring poorly here isn't necessarily bad software. It means that if your operating model assumes agents will do part of the commercial work, this system will need a human in the loop or an integration you build and maintain yourself. That is a cost, and it belongs in the evaluation.</p>
+    <p>Findings are point-in-time. Vendors ship. If something here is out of date or wrong, tell us at <a href="mailto:fessal@agenticreadystack.com" style="color:var(--gold);">fessal@agenticreadystack.com</a> and we'll re-check and re-date the row.</p>
+  </div>
+</section>
+
+<div class="band">
+  <div class="band-inner">
+    <div>
+      <h2>Your stack is one layer. The other eight are organisational.</h2>
+      <p class="band-sub">The registry tells you what your tools can do. The Agentic Commercial Model benchmarks whether the commercial organisation around them is built for the same era.</p>
+    </div>
+    <a class="btn" href="https://tally.so/r/ODZgQa" target="_blank" rel="noopener">Take the free benchmark →</a>
+  </div>
+</div>
+
+<footer class="site">
+  <div>
+    <div class="footer-name">The Agentic Stack</div>
+    <div class="footer-sub">Reviews are independently researched — see our <a href="/disclosure.html" style="color:var(--mist);">disclosure</a>.</div>
+  </div>
+  <div class="footer-links">
+    <a href="/registry.html">Registry</a>
+    <a href="/about.html">Methodology</a>
+    <a href="/disclosure.html">Disclosure</a>
+    <a href="/commercial-readiness.html">Commercial Readiness</a>
+    <a href="mailto:fessal@agenticreadystack.com">Contact</a>
+    <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman ↗</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tb=document.getElementById('rtb'),c=document.getElementById('fcat'),
+      m=document.getElementById('fmcp'),q=document.getElementById('fq'),n=document.getElementById('fcount');
+  var rows=[].slice.call(tb.querySelectorAll('tr'));
+  function apply(){
+    var cv=c.value,mv=m.value,qv=q.value.trim().toLowerCase(),shown=0;
+    rows.forEach(function(r){
+      var ok=(!cv||r.dataset.cat===cv)&&(!mv||r.dataset.mcp===mv)&&
+             (!qv||r.querySelector('th').textContent.toLowerCase().indexOf(qv)>-1);
+      r.style.display=ok?'':'none'; if(ok)shown++;
+    });
+    n.textContent=shown+' of '+rows.length+' vendors';
+  }
+  c.addEventListener('change',apply);m.addEventListener('change',apply);q.addEventListener('input',apply);apply();
+})();
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
