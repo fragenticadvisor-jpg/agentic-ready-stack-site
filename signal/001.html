@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal #001 &mdash; What we found when we checked all thirty-four | The Agentic Stack</title>
+<meta name="description" content="Signal #001: seven findings from a full documentation audit of 34 commercial and RevOps software vendors - who ships an agent interface, who only announced one, and the two layers nobody is building for.">
+<link rel="canonical" href="https://agenticreadystack.com/signal/001.html">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L32PZC9KGH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L32PZC9KGH');
+</script>
+<style>
+.sig{border-top:1px solid var(--rule);padding:2rem 0;}
+.sig-head{display:flex;align-items:baseline;gap:0.9rem;margin-bottom:0.6rem;flex-wrap:wrap;}
+.sig-num{font-family:'Spectral',serif;font-size:1.5rem;color:var(--gold);line-height:1;}
+.sig h3{font-family:'Spectral',serif;font-size:1.25rem;font-weight:600;color:var(--cream);line-height:1.35;margin:0 0 0.7rem;max-width:46ch;}
+.sig p{margin:0 0 0.8rem;max-width:70ch;}
+.sig-take{border-left:2px solid var(--gold);padding-left:1rem;color:var(--cream);}
+.sig-src{font-size:0.76rem;color:var(--mist);}
+.sig-src a{color:var(--gold);text-decoration:none;}
+.sig-src a:hover{text-decoration:underline;}
+.iss{display:block;border:1px solid var(--rule);border-radius:4px;padding:1.4rem 1.6rem;text-decoration:none;margin-bottom:1rem;transition:border-color .15s;}
+.iss:hover{border-color:var(--gold);}
+.iss-meta{font-size:0.72rem;color:var(--mist);text-transform:uppercase;letter-spacing:0.07em;}
+.iss h3{font-family:'Spectral',serif;font-size:1.15rem;color:var(--cream);margin:0.4rem 0 0.5rem;font-weight:600;}
+.iss p{color:var(--mist);font-size:0.88rem;margin:0;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="inner">
+    <a class="logo" href="/">The <span>Agentic</span> Stack</a>
+    <div class="navlinks">
+      <a href="/#categories">Categories</a>
+      <a href="/registry.html">Registry</a>
+      <a href="/signal/" class="active">Signal</a>
+      <a href="/commercial-readiness.html">Commercial Readiness</a>
+      <a href="/about.html">Methodology</a>
+      <a href="/disclosure.html">Disclosure</a>
+      <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">The Model &#8599;</a>
+    </div>
+  </nav>
+</header>
+
+<section class="section-narrow" style="padding-bottom:0.5rem;">
+  <p class="crumb"><a href="/">Home</a> / <a href="/signal/">Signal</a> / #001</p>
+  <p class="section-label">Signal #001 &middot; 21 August 2026</p>
+  <h2 style="max-width:none;">What we found when we checked all thirty-four</h2>
+  <p class="section-intro">Signal is a weekly note on what actually changed in the commercial software stack &mdash; pricing models, agent interfaces, ownership &mdash; tagged to the layer of the Agentic Commercial Model it belongs to. Seven items, no filler, and a link to the document behind every claim.</p>
+  <div class="disclosure-inline">This first issue is not a week of news. It is the output of a full documentation audit of all 34 vendors on this site, completed 21 August 2026 and published as the <a href="/registry.html">Agent-Access Registry</a>. From next week, Signal covers what moved.</div>
+</section>
+
+<section class="section" style="padding-top:1rem;">
+<article class="sig">
+  <div class="sig-head"><span class="sig-num">01</span><span class="tag tag-agentic-mid">Layer 9 &middot; Commercial Systems</span></div>
+  <h3>CRM went from zero documented agent interfaces to two &mdash; and our own review was the thing that was wrong</h3>
+  <p>HubSpot publishes a remote MCP server with scope-gated, admin-authorised read and write access to CRM objects and engagements, distinct from the in-product Breeze copilot. Pipedrive publishes a native MCP server with per-client setup guides, governed by the same authentication and permission settings that bound a human user.</p>
+  <p class="sig-take"><b>Why it matters:</b> Our August review described Pipedrive as a &ldquo;bring your own agent&rdquo; CRM with no native agent layer. That was wrong, and it was wrong because we assessed the marketing surface instead of the developer documentation. Both entries are now corrected and dated. The lesson is not about Pipedrive &mdash; it is that a claim in this market goes stale within a quarter, which is why the registry carries dates and why this letter exists.</p>
+  <p class="sig-src">Source: <a href="https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server" target="_blank" rel="noopener nofollow">HubSpot MCP docs</a> &middot; <a href="https://support.pipedrive.com/en/article/mcp" target="_blank" rel="noopener nofollow">Pipedrive MCP</a></p>
+</article>
+<article class="sig">
+  <div class="sig-head"><span class="sig-num">02</span><span class="tag tag-agentic-mid">Layer 2 &middot; Go-to-Market</span></div>
+  <h3>Outreach shipped an MCP server this month &mdash; and deliberately left out the edit verb</h3>
+  <p>Outreach now publishes a first-party MCP server at api.outreach.io/mcp over OAuth 2.1, released in August 2026 on the Amplify add-on. It exposes read, create and delete tools, governed by the user&rsquo;s existing profile permissions. Update is not among them.</p>
+  <p class="sig-take"><b>Why it matters:</b> The omission is the signal. A vendor that lets an agent create and delete records but not quietly amend them has thought about blast radius: a wrong create is visible, a wrong edit is not. Expect the permission model, rather than the tool count, to become the thing worth comparing.</p>
+  <p class="sig-src">Source: <a href="https://support.outreach.io/support/solutions/articles/159000425158-outreach-mcp-server-overview" target="_blank" rel="noopener nofollow">Outreach MCP overview</a></p>
+</article>
+<article class="sig">
+  <div class="sig-head"><span class="sig-num">03</span><span class="tag tag-agentic-mid">Layer 3 &middot; Pricing and Packaging</span></div>
+  <h3>Zilliant announced an &ldquo;industry-first&rdquo; MCP server. There is nothing in the docs.</h3>
+  <p>Zilliant issued a press release announcing an MCP server slated for Q1 2026. No MCP page appears anywhere in its public developer documentation or Customer API reference &mdash; no authentication method, no scopes, no tool schema.</p>
+  <p class="sig-take"><b>Why it matters:</b> This is the pattern this site exists to catch, and it deserves naming plainly rather than burying in a rating. An agentic capability that lives in the newsroom and not the docs cannot be scoped, permissioned or budgeted for. When a vendor tells you they have an MCP server, the follow-up question is the URL of the page that documents it.</p>
+  <p class="sig-src">Source: <a href="https://zilliant.com/press-releases/zilliant-launches-agentic-ai-with-industry-first-mcp-server-to-end-spreadsheet-pricing" target="_blank" rel="noopener nofollow">Zilliant press release</a></p>
+</article>
+<article class="sig">
+  <div class="sig-head"><span class="sig-num">04</span><span class="tag tag-agentic-mid">Layers 3 + 5 &middot; Pricing and Compensation</span></div>
+  <h3>The two layers that have to change first are the two nobody is building for</h3>
+  <p>Across seven pricing-strategy and sales-compensation vendors, not one publishes an agent interface. Zero. Meanwhile QuotaPath, CaptivateIQ and Salesforce Spiff all document REST APIs with real write endpoints &mdash; commissions, worksheets, plan objects.</p>
+  <p class="sig-take"><b>Why it matters:</b> So an agent can recalculate a commission or restructure a plan. It simply cannot buy the interface to do it. Every other category on the registry has at least one vendor who has done that work for you; in pricing and compensation you build and maintain it yourself, or you keep a human in the loop indefinitely. If your operating model assumes agents take part of the commercial motion, that integration cost belongs in the business case, not in a footnote.</p>
+  <p class="sig-src">Source: <a href="/registry.html">Agent-Access Registry</a></p>
+</article>
+<article class="sig">
+  <div class="sig-head"><span class="sig-num">05</span><span class="tag tag-agentic-mid">Layer 4 &middot; Sales Enablement</span></div>
+  <h3>&ldquo;We have an MCP server&rdquo; is becoming a marketing line. Ask which verbs.</h3>
+  <p>Gong&rsquo;s MCP server is real and first-party, but its documentation describes query and read access only &mdash; the scoped writes, such as call and CRM data upload, sit on the separate REST API. Highspot&rsquo;s MCP server exists as a product page listing write-sounding capabilities with no published authentication method, scopes, permission model or tool schema. Clari&rsquo;s MCP server, documented through the Salesloft help centre, comes with a newsroom claim of write-back that no published scope detail confirms; rollout is phased through late summer.</p>
+  <p class="sig-take"><b>Why it matters:</b> Three vendors, three different distances between the claim and the documentation. We downgraded our own Gong entry for overstating it &mdash; we had called it &ldquo;genuine bidirectional agent connectivity&rdquo; on the strength of a press release. Read access is not agency. If the docs describe only reads, plan for reads.</p>
+  <p class="sig-src">Source: <a href="https://help.gong.io/docs/about-gong-mcp-server" target="_blank" rel="noopener nofollow">Gong MCP</a> &middot; <a href="https://www.highspot.com/product/mcp-server/" target="_blank" rel="noopener nofollow">Highspot MCP</a> &middot; <a href="https://developer.clari.com/documentation/external_spec" target="_blank" rel="noopener nofollow">Clari developer docs</a></p>
+</article>
+<article class="sig">
+  <div class="sig-head"><span class="sig-num">06</span><span class="tag tag-agentic-mid">Layers 6 + 8 &middot; Metering and Revenue Architecture</span></div>
+  <h3>In billing, the sandbox boundary is the entire story</h3>
+  <p>Chargebee publishes three first-party MCP servers &mdash; Knowledge Base, Data Lookup and Onboarding &mdash; but the one that writes targets test and sandbox sites, not production billing. Metronome ships an MCP server inside its official Node SDK whose writes include contract creation and usage ingestion.</p>
+  <p class="sig-take"><b>Why it matters:</b> Same nominal capability, completely different risk surface. Agent-assisted configuration of a billing system is a productivity feature. An agent ingesting usage events into production is a revenue-integrity decision, and it needs an approval path and an audit trail before it needs a demo. Anyone evaluating this layer should ask which environment the write lands in before asking anything else.</p>
+  <p class="sig-src">Source: <a href="https://www.chargebee.com/docs/billing/2.0/ai-in-chargebee/chargebee-mcp" target="_blank" rel="noopener nofollow">Chargebee MCP</a> &middot; <a href="https://github.com/Metronome-Industries/metronome-node" target="_blank" rel="noopener nofollow">Metronome SDK</a></p>
+</article>
+<article class="sig">
+  <div class="sig-head"><span class="sig-num">07</span><span class="tag tag-agentic-mid">Layer 3 &middot; Market structure</span></div>
+  <h3>Consolidation is hitting the two weakest layers first</h3>
+  <p>PROS has divested its B2B CPQ and pricing line to Conga and now positions itself around airline retailing. m3ter is under a definitive agreement to be acquired by Salesforce, with consumption billing for Agentforce given as the stated rationale.</p>
+  <p class="sig-take"><b>Why it matters:</b> Both moves sit in the layers with the thinnest agent story, and they point the same way: the independent pricing and metering vendors are being absorbed into platforms that need consumption billing for their own agent products. Good for the platforms. It narrows the field for anyone who wanted to buy this layer independently, and it is a reason to ask hard questions about roadmap continuity in any pricing-system evaluation this year.</p>
+  <p class="sig-src">Source: <a href="/registry.html">Agent-Access Registry</a></p>
+</article>
+</section>
+
+<section class="section-narrow" style="padding-top:0;">
+  <p class="section-label">Registry moves</p>
+  <div class="prose">
+    <p>Thirty-four rows established, each with an evidence URL and a verification date. Eighteen vendors publish an official MCP server &mdash; more than double what our August review recorded. Eight category write-ups were corrected as a result: Pipedrive, ActiveCampaign, Chargebee, ClickFunnels, Outreach, Clari and Zilliant all claimed an absence that was not there, and Gong was overstated in the other direction.</p>
+    <p>Put bluntly, our own first pass had an error rate above fifty per cent on the vendors it had not properly checked. That is the honest reason the registry is dated and this letter is weekly. A one-off review of this market is out of date before it is published.</p>
+  </div>
+</section>
+
+<div class="band">
+  <div class="band-inner">
+    <div>
+      <h2>Signal lands weekly. The registry updates with it.</h2>
+      <p class="band-sub">Seven items, layer-tagged, evidence-linked. If something here is wrong or out of date, tell us and we will re-check and re-date the row.</p>
+    </div>
+    <a class="btn" href="/registry.html">Open the registry &rarr;</a>
+  </div>
+</div>
+
+<footer class="site">
+  <div>
+    <div class="footer-name">The Agentic Stack</div>
+    <div class="footer-sub">Reviews are independently researched &mdash; see our <a href="/disclosure.html" style="color:var(--mist);">disclosure</a>.</div>
+  </div>
+  <div class="footer-links">
+    <a href="/registry.html">Registry</a>
+    <a href="/signal/">Signal</a>
+    <a href="/about.html">Methodology</a>
+    <a href="/disclosure.html">Disclosure</a>
+    <a href="mailto:fessal@agenticreadystack.com">Contact</a>
+    <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman &#8599;</a>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
