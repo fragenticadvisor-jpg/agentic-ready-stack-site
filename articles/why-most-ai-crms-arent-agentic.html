@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Most "AI-Powered" CRMs Aren't Actually Agentic (And How to Tell)</title>
+<meta name="description" content="A practical checklist for telling a genuinely agentic commercial system apart from a chatbot bolted onto a legacy data model.">
+<link rel="canonical" href="https://agenticreadystack.com/articles/why-most-ai-crms-arent-agentic.html">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L32PZC9KGH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L32PZC9KGH');
+</script>
+</head>
+<body>
+
+<header class="site">
+  <nav class="inner">
+    <a class="logo" href="/">The <span>Agentic</span> Stack</a>
+    <div class="navlinks">
+      <a href="/#categories">Categories</a>
+      <a href="/registry.html">Registry</a>
+      <a href="/signal/">Signal</a>
+      <a href="/commercial-readiness.html">Commercial Readiness</a>
+      <a href="/about.html">Methodology</a>
+      <a href="/disclosure.html">Disclosure</a>
+      <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">The Model ↗</a>
+    </div>
+  </nav>
+</header>
+
+<section class="section-narrow">
+  <p class="crumb"><a href="/">Home</a> / Explainer</p>
+  <p class="section-label">Explainer</p>
+  <h2 style="max-width:none;">Why Most "AI-Powered" CRMs Aren't Actually Agentic (And How to Tell)</h2>
+  <p class="section-intro">"AI-powered" appears on nearly every vendor's homepage now. Almost none of them mean the same thing by it. Here's the practical checklist we use before believing any of them — the same checklist behind every score on this site.</p>
+
+  <div class="prose">
+    <h2>The bar is lower than the marketing suggests</h2>
+    <p>Somewhere around 2024, "AI-powered" became a checkbox rather than a claim. A chat widget that drafts an email. A field that auto-suggests a next step. These are useful, genuinely — but they're assistive, not agentic. The distinction matters because it determines whether the system can actually act on your behalf inside a workflow, or whether a human is still the one clicking "send" every time.</p>
+
+    <h2>Four questions that actually separate the two</h2>
+    <ul>
+      <li><b>Can it write, not just read?</b> Assistive AI reads your data and suggests. Agentic AI can update a record, trigger an email, or change a deal stage on its own — with permissions and an audit trail, not just a recommendation panel.</li>
+      <li><b>Is the action logged as a first-class event?</b> If an agent updates a field, does the system record who (or what) did it and why, the same way it would for a human user? If not, you have no way to debug or trust agent behaviour at scale.</li>
+      <li><b>Does the API expose scoped write access?</b> A read-only API or one requiring full-account access isn't built for safe agent operation. Look for granular, scoped permissions designed for machine actors, not just human OAuth logins — increasingly, look specifically for a documented MCP server.</li>
+      <li><b>Does the pricing model assume a human is doing the work?</b> Seat-based pricing is a tell. If a vendor charges per human seat but markets "AI agents doing the work," ask what happens to your bill as agents — not people — do more of the volume.</li>
+    </ul>
+
+    <h2>Why this is a commercial problem, not just a tech one</h2>
+    <p>None of this is really about software features. A CRM that can't support agent-initiated actions is a symptom of a company's whole commercial model still being built for the pre-agentic era: org structures that wall sales apart from service, comp plans that pay for a moment of signature rather than value delivered over time, pricing that charges for access instead of outcomes. The tool is downstream of all of that.</p>
+    <p>That's the premise behind the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>: a framework for scoring not just your tech stack, but the nine layers of a commercial organisation against how ready each one actually is for this shift. This site applies the same four-question test above to every vendor across all nine categories in <a href="/#categories" style="color:var(--gold);">the full stack</a>.</p>
+
+    <h2>Related reading</h2>
+    <ul>
+      <li><a href="/articles/hubspot-vs-activecampaign-agentic.html" style="color:var(--gold);">HubSpot vs ActiveCampaign: Which CRM Is Actually Ready for Agentic AI?</a></li>
+      <li><a href="/articles/agentic-ready-marketing-stack.html" style="color:var(--gold);">The Agentic-Ready Marketing Stack: 7 Tools Worth Paying For</a></li>
+      <li><a href="/commercial-readiness.html" style="color:var(--gold);">Commercial Readiness — the nine-layer framework</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site">
+  <div>
+    <div class="footer-name">The Agentic Stack</div>
+    <div class="footer-sub">See our <a href="/disclosure.html" style="color:var(--mist);">disclosure</a>.</div>
+  </div>
+  <div class="footer-links">
+    <a href="/#categories">Categories</a>
+    <a href="/about.html">Methodology</a>
+    <a href="/disclosure.html">Disclosure</a>
+    <a href="mailto:fessal@agenticreadystack.com">Contact</a>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
