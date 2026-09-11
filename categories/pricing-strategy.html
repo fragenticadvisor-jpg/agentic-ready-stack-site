@@ -20,23 +20,45 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site">
+<header class="site" id="siteHeader">
   <nav class="inner">
     <a class="logo" href="/">The <span>Agentic</span> Stack</a>
-    <div class="navlinks">
+    <div class="navlinks" id="navLinks">
       <a href="/registry.html" class="active">Registry</a>
       <a href="/signal/">Signal</a>
       <a href="/commercial-readiness.html">Commercial Readiness</a>
       <a href="/content.html">Content</a>
       <a href="/about.html">Methodology</a>
       <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">The Model ↗</a>
+      <a class="btn btn-sm navlink-cta" href="https://tally.so/r/ODZgQa" target="_blank" rel="noopener">Take the Free Benchmark →</a>
     </div>
-    <a class="btn btn-sm" href="https://tally.so/r/ODZgQa" target="_blank" rel="noopener">Take the Free Benchmark →</a>
+    <div class="nav-actions">
+      <button class="search-trigger" id="searchTrigger" type="button" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span class="search-trigger-label">Search</span><kbd>⌘K</kbd>
+      </button>
+      <a class="btn btn-sm" href="https://tally.so/r/ODZgQa" target="_blank" rel="noopener">Take the Free Benchmark →</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 </header>
 
-<section class="section-narrow" style="padding-bottom:2rem;">
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search vendors, Signal issues, guides…" autocomplete="off">
+      <span class="search-esc">ESC</span>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span></div>
+  </div>
+</div>
+
+
+<section class="section-narrow" style="padding-bottom:2rem;" id="main">
   <p class="crumb"><a href="/">Home</a> / <a href="/#categories">Categories</a> / Pricing &amp; Packaging Strategy</p>
   <p class="section-label">Category 06 · Layer 3 — Pricing and Packaging</p>
   <h2 style="max-width:none;">Pricing &amp; Packaging Strategy</h2>
@@ -109,22 +131,41 @@
 </div>
 
 <footer class="site">
-  <div>
-    <div class="footer-name">The Agentic Stack</div>
-    <div class="footer-sub">Reviews are independently researched — see our <a href="/disclosure.html" style="color:var(--mist);">disclosure</a>.</div>
-  </div>
-  <div class="footer-links">
-    <a href="/registry.html">Registry</a>
-    <a href="/signal/">Signal</a>
-    <a href="/commercial-readiness.html">Commercial Readiness</a>
-    <a href="/content.html">Content</a>
-    <a href="/about.html">Methodology</a>
-    <a href="/disclosure.html">Disclosure</a>
-    <a href="mailto:fessal@agenticreadystack.com">Contact</a>
-    <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman ↗</a>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">The Agentic Stack</div>
+        <p class="footer-sub">Reviews are independently researched — see our <a href="/disclosure.html">disclosure</a>. Published by <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman</a>.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <p class="footer-col-h">Site</p>
+          <div class="footer-col">
+            <a href="/registry.html">Registry</a>
+            <a href="/signal/">Signal</a>
+            <a href="/commercial-readiness.html">Commercial Readiness</a>
+            <a href="/content.html">Content</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-h">About</p>
+          <div class="footer-col">
+            <a href="/about.html">Methodology</a>
+            <a href="/disclosure.html">Disclosure</a>
+            <a href="mailto:fessal@agenticreadystack.com">Contact</a>
+            <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Agentic Stack.</span>
+      <span>Every claim links to the document it rests on.</span>
+    </div>
   </div>
 </footer>
 
+<script defer src="/site.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
