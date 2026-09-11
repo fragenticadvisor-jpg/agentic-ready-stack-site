@@ -1,0 +1,34 @@
+[
+  {"title":"Home","cat":"Site","url":"/","desc":"The perfect tech stack for the agentic era — nine categories of commercial software, scored on real agent access."},
+  {"title":"Agent-Access Registry","cat":"Registry","url":"/registry.html","desc":"A dated, evidence-linked registry of 34 commercial and RevOps vendors — MCP servers, external APIs, agent write access."},
+  {"title":"Signal — Weekly Issues","cat":"Signal","url":"/signal/","desc":"Weekly, seven items, a source link on every claim — what actually changed in commercial software."},
+  {"title":"Signal #001 — What we found when we checked all thirty-four","cat":"Signal","url":"/signal/001.html","desc":"A full documentation audit of every vendor on the site. 18/34 publish an official MCP server."},
+  {"title":"Commercial Readiness — the nine-layer framework","cat":"Framework","url":"/commercial-readiness.html","desc":"The Agentic Commercial Model framework this site's registry is the applied, vendor-level layer of."},
+  {"title":"Content — Guides & Articles","cat":"Content","url":"/content.html","desc":"Buyer's guides, head-to-heads, and explainers on agentic-ready commercial software."},
+  {"title":"Methodology","cat":"About","url":"/about.html","desc":"How we score vendors for agentic AI readiness, and what counts as evidence."},
+  {"title":"Disclosure","cat":"About","url":"/disclosure.html","desc":"Affiliate relationships and how reviews are independently researched."},
+
+  {"title":"CRM & Pipeline","cat":"Category · Layer 9","url":"/categories/crm.html","desc":"HubSpot, Pipedrive, and Ahoy compared on agentic AI readiness for the deal system of record."},
+  {"title":"Marketing Automation","cat":"Category · Layer 2","url":"/categories/marketing-automation.html","desc":"ActiveCampaign, Klaviyo, Customer.io, Semrush, and ClickFunnels compared on agentic readiness."},
+  {"title":"GTM & Sales Engagement","cat":"Category · Layer 2","url":"/categories/gtm-sales-engagement.html","desc":"Apollo.io, Clay, and Outreach compared for prospecting, enrichment, and outbound sequencing."},
+  {"title":"Sales Enablement & Revenue Intelligence","cat":"Category · Layer 4","url":"/categories/sales-enablement.html","desc":"Gong, Highspot, and Clari compared for call intelligence, coaching, and forecasting."},
+  {"title":"CPQ","cat":"Category · Layer 3","url":"/categories/cpq.html","desc":"PandaDoc, Qwilr, and DealHub compared — can an agent actually generate and send a quote?"},
+  {"title":"Pricing & Packaging Strategy","cat":"Category · Layer 3","url":"/categories/pricing-strategy.html","desc":"Vendavo, Zilliant, and PROS compared on agentic readiness for price optimization."},
+  {"title":"Billing & Usage Metering","cat":"Category · Layer 6+8","url":"/categories/billing-metering.html","desc":"m3ter, DigitalRoute, Chargebee, Metronome, and Orb compared for usage-based billing."},
+  {"title":"Customer Success & Adoption","cat":"Category · Layer 7","url":"/categories/customer-success.html","desc":"Gainsight, Vitally, Planhat, ChurnZero, and Catalyst compared for retention and expansion."},
+  {"title":"Sales Compensation & Incentive Management","cat":"Category · Layer 5","url":"/categories/sales-compensation.html","desc":"CaptivateIQ, Everstage, QuotaPath, and Spiff compared — the layer agentic AI hasn't reached yet."},
+
+  {"title":"HubSpot vs ActiveCampaign: Which CRM Is Actually Ready for Agentic AI?","cat":"Head-to-head","url":"/articles/hubspot-vs-activecampaign-agentic.html","desc":"Both sell you \"AI.\" Only one has the data architecture to let an agent act on your pipeline."},
+  {"title":"The Agentic-Ready Marketing Stack: 7 Tools Worth Paying For","cat":"Buyer's guide","url":"/articles/agentic-ready-marketing-stack.html","desc":"The original seven-tool guide that kicked off this site's build-out into a full comparison engine."},
+  {"title":"Why Most \"AI-Powered\" CRMs Aren't Actually Agentic","cat":"Explainer","url":"/articles/why-most-ai-crms-arent-agentic.html","desc":"A practical checklist for telling a genuinely agentic system apart from a chatbot bolted onto a legacy data model."},
+
+  {"title":"HubSpot","cat":"Vendor · CRM","url":"/categories/crm.html","desc":"First-party remote MCP server with scope-gated CRM read/write access; agent actions logged as first-class events."},
+  {"title":"Pipedrive","cat":"Vendor · CRM","url":"/categories/crm.html","desc":"Native first-party MCP server governed by the same permissions as a human user."},
+  {"title":"Ahoy","cat":"Vendor · CRM","url":"/categories/crm.html","desc":"AI-native CRM built background-agent-first; no public developer docs confirming scoped agent access yet."},
+  {"title":"Chargebee","cat":"Vendor · Billing","url":"/categories/billing-metering.html","desc":"Three first-party MCP servers plus configurable custom servers with per-tool input constraints."},
+  {"title":"Metronome","cat":"Vendor · Billing","url":"/categories/billing-metering.html","desc":"Publishes @metronome/mcp with write access to contracts and usage ingestion."},
+  {"title":"Gainsight","cat":"Vendor · Customer Success","url":"/categories/customer-success.html","desc":"Compared on agentic readiness for retention and expansion workflows."},
+  {"title":"Gong","cat":"Vendor · Sales Enablement","url":"/categories/sales-enablement.html","desc":"Compared on agentic readiness for call intelligence and coaching."},
+  {"title":"Apollo.io","cat":"Vendor · GTM","url":"/categories/gtm-sales-engagement.html","desc":"Compared on agentic readiness for prospecting and outbound sequencing."},
+  {"title":"CaptivateIQ","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html","desc":"Compared on agentic readiness for commission calculation — the layer furthest from arriving."}
+]
