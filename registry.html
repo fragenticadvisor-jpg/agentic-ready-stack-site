@@ -101,19 +101,19 @@ table.sum td.zero{color:var(--warn);}
 
 <section class="section-narrow" style="padding-bottom:1rem;" id="main">
   <p class="crumb"><a href="/">Home</a> / Agent Access Registry</p>
-  <p class="section-label">Registry · Updated 21 August 2026</p>
+  <p class="section-label">Registry · Updated 14 September 2026</p>
   <h2 style="max-width:none;">Which commercial software can an AI agent actually act inside?</h2>
   <p class="section-intro">Not which vendors say "agentic", which ones publish an interface an external agent can authenticate against and use. Every row below was checked against the vendor's own documentation on the date shown, and links to the specific page the finding rests on. Where we found nothing, we say so rather than leaving it blank.</p>
   <div class="reg-stats">
-    <div class="reg-stat"><b>18<span style="font-size:1rem;color:var(--mist);"> / 34</span></b><span>publish an official MCP server</span></div>
+    <div class="reg-stat"><b>19<span style="font-size:1rem;color:var(--mist);"> / 34</span></b><span>publish an official MCP server</span></div>
     <div class="reg-stat"><b>25<span style="font-size:1rem;color:var(--mist);"> / 34</span></b><span>document external agent write access</span></div>
-    <div class="reg-stat"><b>2</b><span>categories with zero agent interface</span></div>
+    <div class="reg-stat"><b>1</b><span>category with zero agent interface</span></div>
   </div>
 </section>
 
 <section class="section-narrow" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-  <p class="callout">The two categories where no vendor ships an agent interface are Pricing &amp; Packaging and Sales Compensation: Layers 3 and 5 of the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>. They are also the two layers the model argues have to change first. Several of those vendors do expose REST APIs an agent can write through; none of them will sell you the interface. You build it yourself, or you don't have one.</p>
-  <table class="sum"><tr><td>GTM &amp; Sales Engagement</td><td class="dim">Layer 2</td><td class=""><b>3</b> / 3</td></tr><tr><td>Marketing Automation</td><td class="dim">Layer 2</td><td class=""><b>5</b> / 5</td></tr><tr><td>CRM &amp; Pipeline</td><td class="dim">Layer 9</td><td class=""><b>2</b> / 3</td></tr><tr><td>Sales Enablement &amp; Revenue Intelligence</td><td class="dim">Layer 4</td><td class=""><b>2</b> / 3</td></tr><tr><td>Customer Success &amp; Adoption</td><td class="dim">Layer 7</td><td class=""><b>3</b> / 5</td></tr><tr><td>Billing &amp; Usage Metering</td><td class="dim">Layer 6 + 8</td><td class=""><b>2</b> / 5</td></tr><tr><td>CPQ</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Pricing &amp; Packaging Strategy</td><td class="dim">Layer 3</td><td class="zero"><b>0</b> / 3</td></tr><tr><td>Sales Compensation &amp; Incentive Management</td><td class="dim">Layer 5</td><td class="zero"><b>0</b> / 4</td></tr></table>
+  <p class="callout">As of 14 September 2026, Sales Compensation &amp; Incentive Management (Layer 5 of the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>) is the only category where no vendor ships an agent interface; one vendor there now advertises an MCP server as &ldquo;coming soon&rdquo; but has published no technical documentation for it. Pricing &amp; Packaging Strategy (Layer 3) is no longer zero: Zilliant now publishes a live, if read only, MCP server. Several vendors in both layers do expose REST APIs an agent can write through; none will sell you a documented agent interface for it. You build it yourself, or you don't have one.</p>
+  <table class="sum"><tr><td>GTM &amp; Sales Engagement</td><td class="dim">Layer 2</td><td class=""><b>3</b> / 3</td></tr><tr><td>Marketing Automation</td><td class="dim">Layer 2</td><td class=""><b>5</b> / 5</td></tr><tr><td>CRM &amp; Pipeline</td><td class="dim">Layer 9</td><td class=""><b>2</b> / 3</td></tr><tr><td>Sales Enablement &amp; Revenue Intelligence</td><td class="dim">Layer 4</td><td class=""><b>2</b> / 3</td></tr><tr><td>Customer Success &amp; Adoption</td><td class="dim">Layer 7</td><td class=""><b>3</b> / 5</td></tr><tr><td>Billing &amp; Usage Metering</td><td class="dim">Layer 6 + 8</td><td class=""><b>2</b> / 5</td></tr><tr><td>CPQ</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Pricing &amp; Packaging Strategy</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Sales Compensation &amp; Incentive Management</td><td class="dim">Layer 5</td><td class="zero"><b>0</b> / 4</td></tr></table>
 </section>
 
 <section class="section" style="padding-top:0;">
@@ -176,8 +176,8 @@ table.sum td.zero{color:var(--warn);}
 <td><span class="pill ok">Documented</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td class="nowrap"><a href="https://www.m3ter.com/docs/guides/authenticating-with-the-platform/service-authentication" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Aug 21, 2026</td>
-<td class="note">Full REST API with OAuth client credentials and documented writes, but no first party MCP server. Salesforce has signed a definitive agreement to acquire; no completion announcement found.</td>
+<td class="nowrap dim">Sep 14, 2026</td>
+<td class="note">Full REST API with OAuth client credentials and documented writes, still no first party MCP server. Salesforce has now completed its acquisition of m3ter (closed Jul 1, 2026 per Salesforce's own announcement); m3ter's developer docs show no Salesforce branding or MCP addition since.</td>
 </tr>
 <tr data-cat="cpq" data-mcp="third_party_only">
 <th scope="row"><a href="/categories/cpq.html">DealHub</a></th>
@@ -302,12 +302,12 @@ table.sum td.zero{color:var(--warn);}
 <tr data-cat="gtm-sales-engagement" data-mcp="official">
 <th scope="row"><a href="/categories/gtm-sales-engagement.html">Clay</a></th>
 <td class="nowrap dim">L2 · GTM &amp; Sales Engagement</td>
-<td><span class="pill ok">Official</span> <span class="conf" title="Supported by first-party pages found via search; direct page fetch failed">±</span></td>
+<td><span class="pill ok">Official</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td class="nowrap"><a href="https://developers.clay.com/concepts/mcp" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Aug 21, 2026</td>
-<td class="note">First party remote MCP server documented on Clay's developer and university docs, plus a developer platform API/CLI covering tables, searches and workflows: external access, separate from the internal Claygent agent.</td>
+<td class="nowrap dim">Sep 14, 2026</td>
+<td class="note">Correction: not a hosted remote server. First party MCP is a CLI launched local server (clay mcp over stdio, authenticated via clay login or an API key), plus a separate OAuth gated workspace bridge (Clay University docs) connecting Clay to named platforms; external access, separate from the internal Claygent agent.</td>
 </tr>
 <tr data-cat="gtm-sales-engagement" data-mcp="official">
 <th scope="row"><a href="/categories/gtm-sales-engagement.html">Outreach</a></th>
@@ -389,25 +389,25 @@ table.sum td.zero{color:var(--warn);}
 <td class="nowrap dim">Aug 21, 2026</td>
 <td class="note">Only a login gated documentation portal and support site; no public API/developer reference and no MCP mention. 2026 AI announcements cover an embedded pricing assistant, not external agent access.</td>
 </tr>
-<tr data-cat="pricing-strategy" data-mcp="vendor_claimed">
+<tr data-cat="pricing-strategy" data-mcp="official">
 <th scope="row"><a href="/categories/pricing-strategy.html">Zilliant</a></th>
 <td class="nowrap dim">L3 · Pricing &amp; Packaging Strategy</td>
-<td><span class="pill warn">Claimed, undocumented</span></td>
+<td><span class="pill ok">Official</span></td>
 <td><span class="pill ok">Documented</span></td>
-<td><span class="pill warn">Unclear</span></td>
-<td class="nowrap"><a href="https://zilliant.com/press-releases/zilliant-launches-agentic-ai-with-industry-first-mcp-server-to-end-spreadsheet-pricing" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Aug 21, 2026</td>
-<td class="note">Press release announces an MCP server slated for Q1 2026 with no linked technical docs; the public developer docs and Customer API reference contain no MCP pages, so write scoping is unverified.</td>
+<td><span class="pill mid">Read only</span></td>
+<td class="nowrap"><a href="https://docs.zilliant.com/docs/about-zilliant-mcp-server" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 14, 2026</td>
+<td class="note">Delivering on the Q1 2026 press release, Zilliant now publishes live MCP developer docs: OAuth with Salesforce as identity provider, tenant isolated access, read only querying of pricing data, logged and auditable interactions. No write/mutation capability is documented.</td>
 </tr>
-<tr data-cat="sales-compensation" data-mcp="third_party_only">
+<tr data-cat="sales-compensation" data-mcp="vendor_claimed">
 <th scope="row"><a href="/categories/sales-compensation.html">CaptivateIQ</a></th>
 <td class="nowrap dim">L5 · Sales Compensation &amp; Incentive Management</td>
-<td><span class="pill dim">Third party only</span></td>
+<td><span class="pill warn">Claimed, undocumented</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td><span class="pill ok">Documented</span></td>
-<td class="nowrap"><a href="https://developers.captivateiq.com/docs/faqs" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Aug 21, 2026</td>
-<td class="note">Public first party developer site with token auth, documented rate limits and write endpoints (Data Worksheet batch update, bulk import), but no first party MCP server: only third party connector listings.</td>
+<td class="nowrap"><a href="https://www.captivateiq.com/ai-agents" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 14, 2026</td>
+<td class="note">New &ldquo;AI Agents&rdquo; page advertises a CaptivateIQ MCP Server for governed access to compensation and planning data, labelled &ldquo;Coming Soon&rdquo; with no auth method, scopes or tool schema; the first party developer site (token auth, Data Worksheet batch update, bulk import writes) is unchanged and still has no MCP content.</td>
 </tr>
 <tr data-cat="sales-compensation" data-mcp="none_found">
 <th scope="row"><a href="/categories/sales-compensation.html">Everstage</a></th>
