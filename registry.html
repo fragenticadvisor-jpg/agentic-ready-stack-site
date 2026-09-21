@@ -101,7 +101,7 @@ table.sum td.zero{color:var(--warn);}
 
 <section class="section-narrow" style="padding-bottom:1rem;" id="main">
   <p class="crumb"><a href="/">Home</a> / Agent Access Registry</p>
-  <p class="section-label">Registry · Updated 14 September 2026</p>
+  <p class="section-label">Registry · Updated 21 September 2026</p>
   <h2 style="max-width:none;">Which commercial software can an AI agent actually act inside?</h2>
   <p class="section-intro">Not which vendors say "agentic", which ones publish an interface an external agent can authenticate against and use. Every row below was checked against the vendor's own documentation on the date shown, and links to the specific page the finding rests on. Where we found nothing, we say so rather than leaving it blank.</p>
   <div class="reg-stats">
@@ -112,7 +112,7 @@ table.sum td.zero{color:var(--warn);}
 </section>
 
 <section class="section-narrow" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-  <p class="callout">As of 14 September 2026, Sales Compensation &amp; Incentive Management (Layer 5 of the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>) is the only category where no vendor ships an agent interface; one vendor there now advertises an MCP server as &ldquo;coming soon&rdquo; but has published no technical documentation for it. Pricing &amp; Packaging Strategy (Layer 3) is no longer zero: Zilliant now publishes a live, if read only, MCP server. Several vendors in both layers do expose REST APIs an agent can write through; none will sell you a documented agent interface for it. You build it yourself, or you don't have one.</p>
+  <p class="callout">As of 21 September 2026, Sales Compensation &amp; Incentive Management (Layer 5 of the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>) remains the only category where no vendor ships an agent interface; the one vendor there advertising an MCP server as &ldquo;coming soon&rdquo; (CaptivateIQ) still has no technical documentation behind it. Pricing &amp; Packaging Strategy (Layer 3) stays off that list: Zilliant&rsquo;s live, read only MCP server is unchanged. Elsewhere in Layer 3, CPQ vendor DealHub has made the same kind of claim: a press release promising an MCP admin interface for October 2026, with nothing in the developer docs yet. Several vendors across these layers do expose REST APIs an agent can write through; none will sell you a documented agent interface for it. You build it yourself, or you don't have one.</p>
   <table class="sum"><tr><td>GTM &amp; Sales Engagement</td><td class="dim">Layer 2</td><td class=""><b>3</b> / 3</td></tr><tr><td>Marketing Automation</td><td class="dim">Layer 2</td><td class=""><b>5</b> / 5</td></tr><tr><td>CRM &amp; Pipeline</td><td class="dim">Layer 9</td><td class=""><b>2</b> / 3</td></tr><tr><td>Sales Enablement &amp; Revenue Intelligence</td><td class="dim">Layer 4</td><td class=""><b>2</b> / 3</td></tr><tr><td>Customer Success &amp; Adoption</td><td class="dim">Layer 7</td><td class=""><b>3</b> / 5</td></tr><tr><td>Billing &amp; Usage Metering</td><td class="dim">Layer 6 + 8</td><td class=""><b>2</b> / 5</td></tr><tr><td>CPQ</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Pricing &amp; Packaging Strategy</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Sales Compensation &amp; Incentive Management</td><td class="dim">Layer 5</td><td class="zero"><b>0</b> / 4</td></tr></table>
 </section>
 
@@ -179,15 +179,15 @@ table.sum td.zero{color:var(--warn);}
 <td class="nowrap dim">Sep 14, 2026</td>
 <td class="note">Full REST API with OAuth client credentials and documented writes, still no first party MCP server. Salesforce has now completed its acquisition of m3ter (closed Jul 1, 2026 per Salesforce's own announcement); m3ter's developer docs show no Salesforce branding or MCP addition since.</td>
 </tr>
-<tr data-cat="cpq" data-mcp="third_party_only">
+<tr data-cat="cpq" data-mcp="vendor_claimed">
 <th scope="row"><a href="/categories/cpq.html">DealHub</a></th>
 <td class="nowrap dim">L3 · CPQ</td>
-<td><span class="pill dim">Third party only</span></td>
+<td><span class="pill warn">Claimed, undocumented</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td><span class="pill ok">Documented</span></td>
-<td class="nowrap"><a href="https://developers.dealhub.io/docs/introduction-to-dealhub-apis" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Aug 21, 2026</td>
-<td class="note">Documented REST APIs incl. Headless Quotes (generate and publish a quote from a backend system), but neither MCP nor &quot;DealAgent&quot; appears in the developer docs: DealAgent is marketing side only.</td>
+<td class="nowrap"><a href="https://www.globenewswire.com/news-release/2026/09/09/3358917/0/en/DealHub-Introduces-MCP-for-Admin.html" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 21, 2026</td>
+<td class="note">Sep 9, 2026 press release announces &quot;MCP for Admin&quot; (agentic configuration of pricing rules, approval workflows and guided selling), GA stated as October 2026, no auth method, scopes or tool schema published. developers.dealhub.io is unchanged apart from a new llms.txt pointer; documented REST APIs (incl. Headless Quotes) remain the only working surface. Third-party wrappers (e.g. Zapier MCP) unaffected.</td>
 </tr>
 <tr data-cat="cpq" data-mcp="official">
 <th scope="row"><a href="/categories/cpq.html">PandaDoc</a></th>
