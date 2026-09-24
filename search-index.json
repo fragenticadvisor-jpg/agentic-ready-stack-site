@@ -22,13 +22,46 @@
   {"title":"The Agentic-Ready Marketing Stack: 7 Tools Worth Paying For","cat":"Buyer's guide","url":"/articles/agentic-ready-marketing-stack.html","desc":"The original seven-tool guide that kicked off this site's build-out into a full comparison engine."},
   {"title":"Why Most \"AI-Powered\" CRMs Aren't Actually Agentic","cat":"Explainer","url":"/articles/why-most-ai-crms-arent-agentic.html","desc":"A practical checklist for telling a genuinely agentic system apart from a chatbot bolted onto a legacy data model."},
 
-  {"title":"HubSpot","cat":"Vendor · CRM","url":"/categories/crm.html","desc":"First-party remote MCP server with scope-gated CRM read/write access; agent actions logged as first-class events."},
-  {"title":"Pipedrive","cat":"Vendor · CRM","url":"/categories/crm.html","desc":"Native first-party MCP server governed by the same permissions as a human user."},
-  {"title":"Ahoy","cat":"Vendor · CRM","url":"/categories/crm.html","desc":"AI-native CRM built background-agent-first; no public developer docs confirming scoped agent access yet."},
-  {"title":"Chargebee","cat":"Vendor · Billing","url":"/categories/billing-metering.html","desc":"Three first-party MCP servers plus configurable custom servers with per-tool input constraints."},
-  {"title":"Metronome","cat":"Vendor · Billing","url":"/categories/billing-metering.html","desc":"Publishes @metronome/mcp with write access to contracts and usage ingestion."},
-  {"title":"Gainsight","cat":"Vendor · Customer Success","url":"/categories/customer-success.html","desc":"Compared on agentic readiness for retention and expansion workflows."},
-  {"title":"Gong","cat":"Vendor · Sales Enablement","url":"/categories/sales-enablement.html","desc":"Compared on agentic readiness for call intelligence and coaching."},
-  {"title":"Apollo.io","cat":"Vendor · GTM","url":"/categories/gtm-sales-engagement.html","desc":"Compared on agentic readiness for prospecting and outbound sequencing."},
-  {"title":"CaptivateIQ","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html","desc":"Compared on agentic readiness for commission calculation — the layer furthest from arriving."}
+  {"title":"HubSpot","cat":"Vendor · CRM","url":"/categories/crm.html#hubspot","desc":"First-party remote MCP server with scope-gated CRM read/write access; agent actions logged as first-class events."},
+  {"title":"Pipedrive","cat":"Vendor · CRM","url":"/categories/crm.html#pipedrive","desc":"Native first-party MCP server governed by the same permissions as a human user."},
+  {"title":"Ahoy","cat":"Vendor · CRM","url":"/categories/crm.html#ahoy","desc":"AI-native CRM built background-agent-first; no public developer docs confirming scoped agent access yet."},
+
+  {"title":"ActiveCampaign","cat":"Vendor · Marketing Automation","url":"/categories/marketing-automation.html#activecampaign","desc":"First-party remote MCP server supporting real writes: contacts, tags, automations, and campaign sends."},
+  {"title":"Klaviyo","cat":"Vendor · Marketing Automation","url":"/categories/marketing-automation.html#klaviyo","desc":"Official MCP server exposing ~40 tools across campaigns, profiles, segments and flows, with scoped role-based permissions."},
+  {"title":"Customer.io","cat":"Vendor · Marketing Automation","url":"/categories/marketing-automation.html#customerio","desc":"Documented external agent MCP server with granular OAuth-style scopes, from read-only to full write and configure."},
+  {"title":"Semrush","cat":"Vendor · Marketing Automation","url":"/categories/marketing-automation.html#semrush","desc":"First-party MCP server for keyword and competitive data; tools are read-only, with writes on a separate REST API."},
+  {"title":"ClickFunnels","cat":"Vendor · Marketing Automation","url":"/categories/marketing-automation.html#clickfunnels","desc":"MCP server in Labs technical preview, with a selectable read-only or full-access permission level for funnels and contacts."},
+
+  {"title":"Apollo.io","cat":"Vendor · GTM","url":"/categories/gtm-sales-engagement.html#apollo","desc":"Official OAuth-scoped MCP server letting agents search and enrich contacts, manage lists, and send sequences."},
+  {"title":"Clay","cat":"Vendor · GTM","url":"/categories/gtm-sales-engagement.html#clay","desc":"Claygent is a genuine task-executing agent with visible reasoning traces, plus a first-party remote MCP server and API."},
+  {"title":"Outreach","cat":"Vendor · GTM","url":"/categories/gtm-sales-engagement.html#outreach","desc":"First-party MCP server (OAuth 2.1) exposing read, create and delete tools governed by the user's existing permissions."},
+
+  {"title":"Gong","cat":"Vendor · Sales Enablement","url":"/categories/sales-enablement.html#gong","desc":"First-party MCP server for querying call and deal data; scoped write endpoints sit on a separate REST API."},
+  {"title":"Highspot","cat":"Vendor · Sales Enablement","url":"/categories/sales-enablement.html#highspot","desc":"Claims an MCP server and flexible APIs for external agent actions, but the permission/scoping model is undocumented."},
+  {"title":"Clari","cat":"Vendor · Sales Enablement","url":"/categories/sales-enablement.html#clari","desc":"First-party API plus an MCP server for forecasting data; agent write-back is announced but not yet independently verified."},
+
+  {"title":"PandaDoc","cat":"Vendor · CPQ","url":"/categories/cpq.html#pandadoc","desc":"Native MCP server executes full workflows from one instruction: create a proposal and send it for signature."},
+  {"title":"Qwilr","cat":"Vendor · CPQ","url":"/categories/cpq.html#qwilr","desc":"Documented public API lets external systems generate and send personalized, CRM-driven proposals programmatically."},
+  {"title":"DealHub","cat":"Vendor · CPQ","url":"/categories/cpq.html#dealhub","desc":"Markets a 'DealAgent' inside its governed logic layer, but no public technical docs confirm the API or permission model."},
+
+  {"title":"Vendavo","cat":"Vendor · Pricing Strategy","url":"/categories/pricing-strategy.html#vendavo","desc":"ML-generated pricing recommendations surfaced to humans in a workflow; no agent APIs or third-party agent connectivity found."},
+  {"title":"Zilliant","cat":"Vendor · Pricing Strategy","url":"/categories/pricing-strategy.html#zilliant","desc":"Announced an MCP server for Q1 2026 via press release, but no MCP documentation exists in its public developer docs."},
+  {"title":"PROS","cat":"Vendor · Pricing Strategy","url":"/categories/pricing-strategy.html#pros","desc":"No public affiliate program or agent-facing API found; enterprise pricing science, not an agent platform."},
+
+  {"title":"Metronome","cat":"Vendor · Billing","url":"/categories/billing-metering.html#metronome","desc":"Publishes @metronome/mcp with write access to contracts and usage ingestion; now a Stripe product."},
+  {"title":"m3ter","cat":"Vendor · Billing","url":"/categories/billing-metering.html#m3ter","desc":"Acquired by Salesforce in 2026; no documented per-agent billing construct existed in m3ter's own materials pre-acquisition."},
+  {"title":"Orb","cat":"Vendor · Billing","url":"/categories/billing-metering.html#orb","desc":"Runs a dedicated AI/agent solutions page with published case studies on pricing autonomous agent usage."},
+  {"title":"Chargebee","cat":"Vendor · Billing","url":"/categories/billing-metering.html#chargebee","desc":"Three first-party MCP servers plus configurable custom servers with per-tool input constraints."},
+  {"title":"DigitalRoute","cat":"Vendor · Billing","url":"/categories/billing-metering.html#digitalroute","desc":"Uses 'agentic monetization' marketing language, but no specific documentation of per-agent metering constructs was found."},
+
+  {"title":"Gainsight","cat":"Vendor · Customer Success","url":"/categories/customer-success.html#gainsight","desc":"First-party MCP connector for real, scoped writes to CTAs, Success Plans and tasks via OAuth."},
+  {"title":"Vitally","cat":"Vendor · Customer Success","url":"/categories/customer-success.html#vitally","desc":"Official MCP server creates notes, tasks and custom records directly; write actions have no built-in confirmation prompt."},
+  {"title":"Planhat","cat":"Vendor · Customer Success","url":"/categories/customer-success.html#planhat","desc":"Read-write MCP server: agents can create tasks, update records, and build documents and dashboards."},
+  {"title":"ChurnZero","cat":"Vendor · Customer Success","url":"/categories/customer-success.html#churnzero","desc":"Announced 'Agentic Essentials' and an MCP offering via press release; product docs describe AI mostly in drafting terms."},
+  {"title":"Catalyst","cat":"Vendor · Customer Success","url":"/categories/customer-success.html#catalyst","desc":"No first-party MCP server; Totango's HTTP and Touchpoints APIs accept writes via API key with no agent-specific scoping."},
+
+  {"title":"CaptivateIQ","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#captivateiq","desc":"No MCP server; a public REST API supports real writes like batch updates, but no agent interface is sold."},
+  {"title":"Everstage","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#everstage","desc":"'Agent Core' auto-assigns new hires to comp plans, but no MCP server or scoped permission architecture is documented."},
+  {"title":"QuotaPath","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#quotapath","desc":"Atlas AI is advisory only; a public REST API supports writes to deals and commissions, with no first-party MCP server."},
+  {"title":"Spiff","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#spiff","desc":"Now sold as Salesforce Spiff; its developer API supports commission object writes, though no Spiff-specific MCP server exists."}
 ]
