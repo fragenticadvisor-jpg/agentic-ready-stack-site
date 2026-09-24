@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agent Access Registry, Which Commercial Software Agents Can Actually Act In | The Agentic Stack</title>
-<meta name="description" content="A dated, evidence-linked registry of 34 commercial and RevOps software vendors, recording which publish an official MCP server, which expose a documented external API, and which allow an external AI agent to write.">
+<meta name="description" content="A dated, evidence-linked registry of 43 commercial and RevOps software vendors, recording which publish an official MCP server, which expose a documented external API, and which allow an external AI agent to write.">
 <link rel="canonical" href="https://agenticreadystack.com/registry.html">
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,21 +105,21 @@ table.sum td.zero{color:var(--warn);}
   <h2 style="max-width:none;">Which commercial software can an AI agent actually act inside?</h2>
   <p class="section-intro">Not which vendors say "agentic", which ones publish an interface an external agent can authenticate against and use. Every row below was checked against the vendor's own documentation on the date shown, and links to the specific page the finding rests on. Where we found nothing, we say so rather than leaving it blank.</p>
   <div class="reg-stats">
-    <div class="reg-stat"><b>19<span style="font-size:1rem;color:var(--mist);"> / 34</span></b><span>publish an official MCP server</span></div>
-    <div class="reg-stat"><b>25<span style="font-size:1rem;color:var(--mist);"> / 34</span></b><span>document external agent write access</span></div>
+    <div class="reg-stat"><b>25<span style="font-size:1rem;color:var(--mist);"> / 43</span></b><span>publish an official MCP server</span></div>
+    <div class="reg-stat"><b>31<span style="font-size:1rem;color:var(--mist);"> / 43</span></b><span>document external agent write access</span></div>
     <div class="reg-stat"><b>1</b><span>category with zero agent interface</span></div>
   </div>
 </section>
 
 <section class="section-narrow" style="padding-top:1.5rem;padding-bottom:1.5rem;">
   <p class="callout">As of 21 September 2026, Sales Compensation &amp; Incentive Management (Layer 5 of the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>) remains the only category where no vendor ships an agent interface; the one vendor there advertising an MCP server as &ldquo;coming soon&rdquo; (CaptivateIQ) still has no technical documentation behind it. Pricing &amp; Packaging Strategy (Layer 3) stays off that list: Zilliant&rsquo;s live, read only MCP server is unchanged. Elsewhere in Layer 3, CPQ vendor DealHub has made the same kind of claim: a press release promising an MCP admin interface for October 2026, with nothing in the developer docs yet. Several vendors across these layers do expose REST APIs an agent can write through; none will sell you a documented agent interface for it. You build it yourself, or you don't have one.</p>
-  <table class="sum"><tr><td>GTM &amp; Sales Engagement</td><td class="dim">Layer 2</td><td class=""><b>3</b> / 3</td></tr><tr><td>Marketing Automation</td><td class="dim">Layer 2</td><td class=""><b>5</b> / 5</td></tr><tr><td>CRM &amp; Pipeline</td><td class="dim">Layer 9</td><td class=""><b>2</b> / 3</td></tr><tr><td>Sales Enablement &amp; Revenue Intelligence</td><td class="dim">Layer 4</td><td class=""><b>2</b> / 3</td></tr><tr><td>Customer Success &amp; Adoption</td><td class="dim">Layer 7</td><td class=""><b>3</b> / 5</td></tr><tr><td>Billing &amp; Usage Metering</td><td class="dim">Layer 6 + 8</td><td class=""><b>2</b> / 5</td></tr><tr><td>CPQ</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Pricing &amp; Packaging Strategy</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Sales Compensation &amp; Incentive Management</td><td class="dim">Layer 5</td><td class="zero"><b>0</b> / 4</td></tr></table>
+  <table class="sum"><tr><td>GTM &amp; Sales Engagement</td><td class="dim">Layer 2</td><td class=""><b>3</b> / 3</td></tr><tr><td>Marketing Automation</td><td class="dim">Layer 2</td><td class=""><b>5</b> / 5</td></tr><tr><td>CRM &amp; Pipeline</td><td class="dim">Layer 9</td><td class=""><b>2</b> / 3</td></tr><tr><td>Sales Enablement &amp; Revenue Intelligence</td><td class="dim">Layer 4</td><td class=""><b>2</b> / 3</td></tr><tr><td>Customer Success &amp; Adoption</td><td class="dim">Layer 7</td><td class=""><b>3</b> / 5</td></tr><tr><td>Billing &amp; Usage Metering</td><td class="dim">Layer 6 + 8</td><td class=""><b>2</b> / 5</td></tr><tr><td>CPQ</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Pricing &amp; Packaging Strategy</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Sales Compensation &amp; Incentive Management</td><td class="dim">Layer 5</td><td class="zero"><b>0</b> / 4</td></tr><tr><td>Accounting</td><td class="dim">Finance &amp; Operations</td><td class=""><b>2</b> / 3</td></tr><tr><td>HR &amp; Payroll</td><td class="dim">Finance &amp; Operations</td><td class=""><b>2</b> / 3</td></tr><tr><td>Support &amp; Helpdesk</td><td class="dim">Customer Operations</td><td class=""><b>2</b> / 3</td></tr></table>
 </section>
 
 <section class="section" style="padding-top:0;">
   <div class="reg-controls">
     <label for="fcat">Category</label>
-    <select id="fcat"><option value="">All</option><option value="billing-metering">Billing &amp; Usage Metering</option><option value="cpq">CPQ</option><option value="crm">CRM &amp; Pipeline</option><option value="customer-success">Customer Success &amp; Adoption</option><option value="gtm-sales-engagement">GTM &amp; Sales Engagement</option><option value="marketing-automation">Marketing Automation</option><option value="pricing-strategy">Pricing &amp; Packaging Strategy</option><option value="sales-compensation">Sales Compensation &amp; Incentive Management</option><option value="sales-enablement">Sales Enablement &amp; Revenue Intelligence</option></select>
+    <select id="fcat"><option value="">All</option><option value="accounting">Accounting</option><option value="billing-metering">Billing &amp; Usage Metering</option><option value="cpq">CPQ</option><option value="crm">CRM &amp; Pipeline</option><option value="customer-success">Customer Success &amp; Adoption</option><option value="gtm-sales-engagement">GTM &amp; Sales Engagement</option><option value="hr-payroll">HR &amp; Payroll</option><option value="marketing-automation">Marketing Automation</option><option value="pricing-strategy">Pricing &amp; Packaging Strategy</option><option value="sales-compensation">Sales Compensation &amp; Incentive Management</option><option value="sales-enablement">Sales Enablement &amp; Revenue Intelligence</option><option value="support-helpdesk">Support &amp; Helpdesk</option></select>
     <label for="fmcp">MCP server</label>
     <select id="fmcp"><option value="">All</option><option value="official">Official</option><option value="vendor_claimed">Claimed, undocumented</option><option value="third_party_only">Third party only</option><option value="none_found">None found</option></select>
     <input id="fq" type="search" placeholder="Search vendor…" aria-label="Search vendor">
@@ -468,6 +468,96 @@ table.sum td.zero{color:var(--warn);}
 <td class="nowrap"><a href="https://www.highspot.com/product/mcp-server/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
 <td class="nowrap dim">Aug 21, 2026</td>
 <td class="note">The only first party MCP page is a product/marketing page listing capabilities with no published auth method, scopes, permission model or tool schema, so the write sounding actions cannot be verified as documented scoped access.</td>
+</tr>
+<tr data-cat="accounting" data-mcp="official">
+<th scope="row"><a href="/categories/accounting.html#quickbooks-online">QuickBooks Online</a></th>
+<td class="nowrap dim">Finance &amp; Operations · Accounting</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://github.com/intuit/quickbooks-online-mcp-server" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">Intuit publishes an official MCP server under its own GitHub org: 144+ tools across 29 entity types with full create, read, update and delete access individually toggleable via environment flags, plus 11 financial reports. Lives on GitHub rather than Intuit's primary developer documentation portal; Intuit's own developer forum has an unanswered thread asking whether it exists.</td>
+</tr>
+<tr data-cat="accounting" data-mcp="official">
+<th scope="row"><a href="/categories/accounting.html#xero">Xero</a></th>
+<td class="nowrap dim">Finance &amp; Operations · Accounting</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://github.com/XeroAPI/xero-mcp-server" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">Xero publishes an official MCP server under its own GitHub org: documented read and write tools spanning contacts, chart of accounts, invoices, bank transactions and payroll, gated by granular OAuth2 scopes. Not yet surfaced on Xero's primary developer docs site.</td>
+</tr>
+<tr data-cat="accounting" data-mcp="third_party_only">
+<th scope="row"><a href="/categories/accounting.html#freshbooks">FreshBooks</a></th>
+<td class="nowrap dim">Finance &amp; Operations · Accounting</td>
+<td><span class="pill dim">Third party only</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://www.freshbooks.com/developers" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">Documented conventional REST API with write endpoints; no first party MCP server. Every MCP server found (StackOne, Composio, Zapier, an independent GitHub project) is a third party wrapper built on top of the existing API, not something FreshBooks built or documents.</td>
+</tr>
+<tr data-cat="hr-payroll" data-mcp="official">
+<th scope="row"><a href="/categories/hr-payroll.html#deel">Deel</a></th>
+<td class="nowrap dim">Finance &amp; Operations · HR &amp; Payroll</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developer.deel.com/mcp/introduction" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">Official hosted MCP server (api.letsdeel.com/mcp) with three scope tiers: organization level, worker level and public reference data, including genuine write actions such as creating time off requests. Presented as production ready, with real OAuth and timeout troubleshooting docs rather than a marketing only announcement.</td>
+</tr>
+<tr data-cat="hr-payroll" data-mcp="official">
+<th scope="row"><a href="/categories/hr-payroll.html#gusto">Gusto</a></th>
+<td class="nowrap dim">Finance &amp; Operations · HR &amp; Payroll</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://gusto.com/product/integrations/gusto-mcp" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">Official hosted MCP product (mcp.api.gusto.com) supporting genuine write actions: running payroll, onboarding employees, logging time, each requiring explicit confirmation before it executes. A separate "Dev Assistant MCP", explicitly labelled beta, is a docs search tool for developers, not a data access product, and shouldn't be confused with the live data MCP described here.</td>
+</tr>
+<tr data-cat="hr-payroll" data-mcp="vendor_claimed">
+<th scope="row"><a href="/categories/hr-payroll.html#rippling">Rippling</a></th>
+<td class="nowrap dim">Finance &amp; Operations · HR &amp; Payroll</td>
+<td><span class="pill warn">Claimed, undocumented</span> <span class="conf" title="Supported by first-party developer docs pages (Overview, Tools, Setup) found via search and a third-party directory quoting the official text verbatim; the JS-rendered docs site blocked our direct fetch">±</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill warn">Unclear</span></td>
+<td class="nowrap"><a href="https://developer.rippling.com/documentation/rippling-platform/rippling-mcp/overview" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">Rippling's developer portal has dedicated Overview, Tools and Setup pages for a native "Rippling MCP", and first party marketing material describes it letting external AI tools act using the caller's own permissions. The docs site is JS rendered and blocked our automated fetch, so the exact scopes and permission table remain unverified pending a manual check; a separate, unofficial community MCP server also exists and should not be credited to the vendor.</td>
+</tr>
+<tr data-cat="support-helpdesk" data-mcp="official">
+<th scope="row"><a href="/categories/support-helpdesk.html#intercom">Intercom</a></th>
+<td class="nowrap dim">Customer Operations · Support &amp; Helpdesk</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td class="nowrap"><a href="https://developers.intercom.com/docs/guides/mcp" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">Official, Intercom run remote MCP server: 14 tools including genuine write access (create_article, update_article, add_internal_note) gated by four OAuth style permission scopes.</td>
+</tr>
+<tr data-cat="support-helpdesk" data-mcp="official">
+<th scope="row"><a href="/categories/support-helpdesk.html#helpscout">Help Scout</a></th>
+<td class="nowrap dim">Customer Operations · Support &amp; Helpdesk</td>
+<td><span class="pill ok">Official</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill mid">Read only</span></td>
+<td class="nowrap"><a href="https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">First party MCP server backed by a real setup guide for connecting Claude, ChatGPT or Cursor to search conversations and pull reports, scoped to each teammate's own login. Capability is read only today; Help Scout's own announcement says drafting replies and adding internal notes are planned but not yet released.</td>
+</tr>
+<tr data-cat="support-helpdesk" data-mcp="vendor_claimed">
+<th scope="row"><a href="/categories/support-helpdesk.html#zendesk">Zendesk</a></th>
+<td class="nowrap dim">Customer Operations · Support &amp; Helpdesk</td>
+<td><span class="pill warn">Claimed, undocumented</span></td>
+<td><span class="pill ok">Documented</span></td>
+<td><span class="pill warn">Unclear</span></td>
+<td class="nowrap"><a href="https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Sep 24, 2026</td>
+<td class="note">Zendesk's own docs describe it primarily as an MCP client connecting out to third party servers; one unsupported line claims it "can also act as an MCP server" with no scope list, endpoint reference or spec behind it. The "MCP Server" app in Zendesk's marketplace is built by a third party (Swifteq), not Zendesk itself.</td>
 </tr>
       </tbody>
     </table>

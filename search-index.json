@@ -1,6 +1,6 @@
 [
-  {"title":"Home","cat":"Site","url":"/","desc":"The perfect tech stack for the agentic era — nine categories of commercial software, scored on real agent access."},
-  {"title":"Agent-Access Registry","cat":"Registry","url":"/registry.html","desc":"A dated, evidence-linked registry of 34 commercial and RevOps vendors — MCP servers, external APIs, agent write access."},
+  {"title":"Home","cat":"Site","url":"/","desc":"The perfect tech stack for the agentic era — twelve categories of commercial software, scored on real agent access."},
+  {"title":"Agent-Access Registry","cat":"Registry","url":"/registry.html","desc":"A dated, evidence-linked registry of 43 commercial and RevOps vendors — MCP servers, external APIs, agent write access."},
   {"title":"Signal — Weekly Issues","cat":"Signal","url":"/signal/","desc":"Weekly, seven items, a source link on every claim — what actually changed in commercial software."},
   {"title":"Signal #001 — What we found when we checked all thirty-four","cat":"Signal","url":"/signal/001.html","desc":"A full documentation audit of every vendor on the site. 18/34 publish an official MCP server."},
   {"title":"Commercial Readiness — the nine-layer framework","cat":"Framework","url":"/commercial-readiness.html","desc":"The Agentic Commercial Model framework this site's registry is the applied, vendor-level layer of."},
@@ -17,6 +17,9 @@
   {"title":"Billing & Usage Metering","cat":"Category · Layer 6+8","url":"/categories/billing-metering.html","desc":"m3ter, DigitalRoute, Chargebee, Metronome, and Orb compared for usage-based billing."},
   {"title":"Customer Success & Adoption","cat":"Category · Layer 7","url":"/categories/customer-success.html","desc":"Gainsight, Vitally, Planhat, ChurnZero, and Catalyst compared for retention and expansion."},
   {"title":"Sales Compensation & Incentive Management","cat":"Category · Layer 5","url":"/categories/sales-compensation.html","desc":"CaptivateIQ, Everstage, QuotaPath, and Spiff compared — the layer agentic AI hasn't reached yet."},
+  {"title":"Accounting","cat":"Category · Finance & Operations","url":"/categories/accounting.html","desc":"Xero, QuickBooks Online, and FreshBooks compared on agentic AI readiness for small business accounting."},
+  {"title":"HR & Payroll","cat":"Category · Finance & Operations","url":"/categories/hr-payroll.html","desc":"Deel, Gusto, and Rippling compared on agentic AI readiness for workforce management."},
+  {"title":"Support & Helpdesk","cat":"Category · Customer Operations","url":"/categories/support-helpdesk.html","desc":"Intercom, Help Scout, and Zendesk compared on agentic AI readiness for ticketing and support."},
 
   {"title":"HubSpot vs ActiveCampaign: Which CRM Is Actually Ready for Agentic AI?","cat":"Head-to-head","url":"/articles/hubspot-vs-activecampaign-agentic.html","desc":"Both sell you \"AI.\" Only one has the data architecture to let an agent act on your pipeline."},
   {"title":"The Agentic-Ready Marketing Stack: 7 Tools Worth Paying For","cat":"Buyer's guide","url":"/articles/agentic-ready-marketing-stack.html","desc":"The original seven-tool guide that kicked off this site's build-out into a full comparison engine."},
@@ -63,5 +66,14 @@
   {"title":"CaptivateIQ","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#captivateiq","desc":"No MCP server; a public REST API supports real writes like batch updates, but no agent interface is sold."},
   {"title":"Everstage","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#everstage","desc":"'Agent Core' auto-assigns new hires to comp plans, but no MCP server or scoped permission architecture is documented."},
   {"title":"QuotaPath","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#quotapath","desc":"Atlas AI is advisory only; a public REST API supports writes to deals and commissions, with no first-party MCP server."},
-  {"title":"Spiff","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#spiff","desc":"Now sold as Salesforce Spiff; its developer API supports commission object writes, though no Spiff-specific MCP server exists."}
+  {"title":"Spiff","cat":"Vendor · Sales Compensation","url":"/categories/sales-compensation.html#spiff","desc":"Now sold as Salesforce Spiff; its developer API supports commission object writes, though no Spiff-specific MCP server exists."},
+  {"title":"QuickBooks Online","cat":"Vendor · Accounting","url":"/categories/accounting.html#quickbooks-online","desc":"Intuit's own GitHub org publishes an official MCP server: 144+ tools, full CRUD, but not surfaced on Intuit's main developer docs."},
+  {"title":"Xero","cat":"Vendor · Accounting","url":"/categories/accounting.html#xero","desc":"Official MCP server under Xero's own GitHub org, with documented read/write tools across contacts, invoices, and payroll."},
+  {"title":"FreshBooks","cat":"Vendor · Accounting","url":"/categories/accounting.html#freshbooks","desc":"Documented REST API with write access, but no first-party MCP server — only third-party wrappers exist."},
+  {"title":"Deel","cat":"Vendor · HR & Payroll","url":"/categories/hr-payroll.html#deel","desc":"Official hosted MCP server with organization- and worker-level scopes, including genuine write actions like time-off requests."},
+  {"title":"Gusto","cat":"Vendor · HR & Payroll","url":"/categories/hr-payroll.html#gusto","desc":"Official hosted MCP product supporting real writes — running payroll, onboarding — each requiring explicit confirmation."},
+  {"title":"Rippling","cat":"Vendor · HR & Payroll","url":"/categories/hr-payroll.html#rippling","desc":"Developer portal documents a native Rippling MCP, but scopes and permissions couldn't be independently verified yet."},
+  {"title":"Intercom","cat":"Vendor · Support & Helpdesk","url":"/categories/support-helpdesk.html#intercom","desc":"Official remote MCP server with 14 tools including genuine write access, gated by four OAuth-style permission scopes."},
+  {"title":"Help Scout","cat":"Vendor · Support & Helpdesk","url":"/categories/support-helpdesk.html#helpscout","desc":"First-party MCP server with a real setup guide for AI agents to search conversations; read-only for now."},
+  {"title":"Zendesk","cat":"Vendor · Support & Helpdesk","url":"/categories/support-helpdesk.html#zendesk","desc":"Docs describe Zendesk mainly as an MCP client; its own server-mode claim has no scope list or spec behind it."}
 ]
