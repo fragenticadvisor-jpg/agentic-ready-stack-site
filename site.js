@@ -27,6 +27,31 @@
     });
   }
 
+  /* ---------- Categories dropdown ---------- */
+  var catDropdown = document.getElementById('catDropdown');
+  var catTrigger = document.getElementById('catDropdownTrigger');
+  if (catDropdown && catTrigger) {
+    var closeCatDropdown = function () {
+      catDropdown.classList.remove('open');
+      catTrigger.setAttribute('aria-expanded', 'false');
+    };
+    catTrigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = catDropdown.classList.toggle('open');
+      catTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (catDropdown.classList.contains('open') && !catDropdown.contains(e.target)) {
+        closeCatDropdown();
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && catDropdown.classList.contains('open')) {
+        closeCatDropdown();
+      }
+    });
+  }
+
   /* ---------- Search palette ---------- */
   var trigger = document.getElementById('searchTrigger');
   var overlay = document.getElementById('searchOverlay');
