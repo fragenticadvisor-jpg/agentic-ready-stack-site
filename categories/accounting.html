@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CPQ: Agentic AI Readiness Compared | The Agentic Stack</title>
-<meta name="description" content="PandaDoc, Qwilr, and DealHub compared on agentic AI readiness for configure-price-quote workflows — can an agent actually generate and send a quote?">
-<link rel="canonical" href="https://agenticreadystack.com/categories/cpq.html">
+<title>Accounting: Agentic AI Readiness | The Agentic Stack</title>
+<meta name="description" content="Xero, QuickBooks Online, and FreshBooks compared on agentic AI readiness for small business accounting software.">
+<link rel="canonical" href="https://agenticreadystack.com/categories/accounting.html">
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,64 +59,63 @@
 
 
 <section class="section-narrow" style="padding-bottom:2rem;" id="main">
-  <p class="crumb"><a href="/">Home</a> / <a href="/#categories">Categories</a> / CPQ</p>
-  <p class="section-label">Category 05 · Layer 3: Pricing and Packaging</p>
-  <h2 style="max-width:none;">CPQ</h2>
-  <p class="section-intro">Configure price quote is the layer that decides whether an agent can actually close a deal, not just chat about one. We looked for a real, documented interface (ideally MCP) that lets an agent generate and send a priced quote on its own, versus a human still assembling the document.</p>
-  <div class="disclosure-inline">Some links below are affiliate links: see our <a href="/disclosure.html">full disclosure</a>. Where a vendor has no public affiliate program, we link straight to their site with no tracking and say so.</div>
+  <p class="crumb"><a href="/">Home</a> / <a href="/#categories">Categories</a> / Accounting</p>
+  <p class="section-label">Category 10 · Finance &amp; Operations</p>
+  <h2 style="max-width:none;">Accounting</h2>
+  <p class="section-intro">Small business accounting sits outside the go-to-market stack this site started with, but it's a category almost every growing company eventually touches, and unusually for back office software, two of the three vendors here have gone further than most of the GTM stack on agent access: both Xero and QuickBooks Online publish their own open source MCP servers with real write scopes, not just an in-app copilot.</p>
+  <div class="disclosure-inline">Xero is a live, tracked affiliate relationship today. We're in the process of applying to FreshBooks' affiliate program. QuickBooks Online runs a referral program but it requires a US-registered business with a US EIN and US bank account, which we don't have, so that link is untracked. See our <a href="/disclosure.html">full disclosure</a>.</div>
 </section>
 
 <section class="section" style="padding-top:0;">
   <div class="vendor-grid">
 
-    <div class="vendor-card" id="pandadoc">
+    <div class="vendor-card" id="quickbooks-online">
       <div class="vendor-head">
-        <div class="vendor-name"><span class="rank">01</span>PandaDoc</div>
+        <div class="vendor-name"><span class="rank">01</span>QuickBooks Online</div>
+        <div class="vendor-tags">
+          <span class="tag tag-agentic-high">High: native MCP server</span>
+          <span class="tag tag-info">Affiliate program (US entities only)</span>
+        </div>
+      </div>
+      <p class="vendor-meta">Small business accounting: <b>from $19/mo promo (~$38/mo regular)</b> · quickbooks.intuit.com</p>
+      <p class="vendor-desc">Intuit's cloud accounting platform and the dominant small business accounting product in the US market, spanning basic bookkeeping through project tracking, inventory, and advanced reporting at the top tier. It's the default most US accountants and bookkeepers are trained on.</p>
+      <div class="vendor-angle"><b>Agentic angle:</b> Intuit publishes an official MCP server under its own GitHub org (intuit/quickbooks-online-mcp-server): 144+ tools across 29 entity types with full create, read, update, and delete access, individually toggleable via environment flags, plus 11 financial reports. It's real, vendor published, and substantive, but it lives on GitHub rather than Intuit's primary developer documentation portal, and even Intuit's own developer forum has an unanswered thread asking whether it exists. Verified against vendor documentation, 24 Sept 2026.</div>
+      <div class="vendor-cta-row">
+        <a class="btn-ghost btn-sm" href="https://quickbooks.intuit.com/" target="_blank" rel="noopener nofollow">Visit QuickBooks Online →</a>
+      </div>
+    </div>
+
+    <div class="vendor-card" id="xero">
+      <div class="vendor-head">
+        <div class="vendor-name"><span class="rank">02</span>Xero</div>
         <div class="vendor-tags">
           <span class="tag tag-agentic-high">High: native MCP server</span>
           <span class="tag tag-affiliate">Affiliate program</span>
         </div>
       </div>
-      <p class="vendor-meta">Document automation, proposals &amp; CPQ: <b>free plan, paid from $19/seat/mo</b> · pandadoc.com</p>
-      <p class="vendor-desc">Document automation software for proposals, quotes, contracts, and e sign with lightweight CPQ, positioning itself directly against DocuSign on agent readiness. The clearest combination in this category of documented agentic architecture and a real, tiered affiliate program.</p>
-      <div class="vendor-angle"><b>Agentic angle:</b> A native MCP server lets an agent execute a full workflow from a single natural language instruction: e.g. "create a proposal for Acme at $25,000/year and send for signature": the strongest, most concretely demonstrated example we found in this whole comparison.</div>
+      <p class="vendor-meta">Small business accounting: <b>from $25/mo</b> · xero.com</p>
+      <p class="vendor-desc">Cloud accounting software aimed at small businesses and the accounting and bookkeeping firms that serve them, with particular strength outside the US in New Zealand, Australia, and the UK. Covers invoicing, bank reconciliation, payroll, inventory, and multi-currency accounting.</p>
+      <div class="vendor-angle"><b>Agentic angle:</b> Xero publishes an official MCP server under its own GitHub org (XeroAPI/xero-mcp-server): documented read and write tools spanning contacts, chart of accounts, invoices, bank transactions, and payroll, gated by granular OAuth2 scopes. Same pattern as QuickBooks: real vendor published code with a documented tool list, just not yet surfaced on Xero's primary developer docs site. Verified against vendor documentation, 24 Sept 2026.</div>
       <div class="vendor-cta-row">
         <span class="placeholder-note">[Affiliate link placeholder]</span>
-        <a class="btn btn-sm" href="#" data-affiliate="pandadoc">Try PandaDoc free →</a>
+        <a class="btn btn-sm" href="#" data-affiliate="xero-accounting">Try Xero free →</a>
       </div>
     </div>
 
-    <div class="vendor-card" id="qwilr">
+    <div class="vendor-card" id="freshbooks">
       <div class="vendor-head">
-        <div class="vendor-name"><span class="rank">02</span>Qwilr</div>
+        <div class="vendor-name"><span class="rank">03</span>FreshBooks</div>
         <div class="vendor-tags">
-          <span class="tag tag-agentic-mid">Medium high: documented API</span>
+          <span class="tag tag-agentic-mid">Medium: documented API, no first-party MCP</span>
           <span class="tag tag-affiliate">Affiliate program</span>
         </div>
       </div>
-      <p class="vendor-meta">Interactive proposals &amp; quoting: <b>from $35/user/mo</b> · qwilr.com</p>
-      <p class="vendor-desc">Web page style proposals and quotes rather than static PDFs, with embedded e sign and payment. Aimed at sales teams that want a proposal to feel like a product experience, with a public API built for high volume, personalized document generation from CRM data.</p>
-      <div class="vendor-angle"><b>Agentic angle:</b> A documented public API lets external systems programmatically create and send personalized proposals pulling live CRM data: functionally agent compatible, though positioned as a developer API rather than a dedicated "AI agent" feature.</div>
+      <p class="vendor-meta">Invoicing led accounting for freelancers &amp; small teams: <b>from $23/mo (lower promo pricing)</b> · freshbooks.com</p>
+      <p class="vendor-desc">Invoicing led accounting software aimed at freelancers, solopreneurs, and small service based businesses such as consultants and agencies, rather than full bookkeeping depth for larger SMBs. Emphasizes client facing invoicing, time tracking, and expense capture over general ledger depth.</p>
+      <div class="vendor-angle"><b>Agentic angle:</b> FreshBooks maintains a documented, conventional REST API with write endpoints, but publishes no first party MCP server or agent specific interface itself. Every MCP server we found for it (StackOne, Composio, Zapier, an independent GitHub project) is a third party wrapper built on top of that existing API, not something FreshBooks built or documents. Verified against vendor documentation, 24 Sept 2026.</div>
       <div class="vendor-cta-row">
         <span class="placeholder-note">[Affiliate link placeholder]</span>
-        <a class="btn btn-sm" href="#" data-affiliate="qwilr">Try Qwilr free →</a>
-      </div>
-    </div>
-
-    <div class="vendor-card" id="dealhub">
-      <div class="vendor-head">
-        <div class="vendor-name"><span class="rank">03</span>DealHub</div>
-        <div class="vendor-tags">
-          <span class="tag tag-agentic-mid">Medium: marketing led, unconfirmed API</span>
-          <span class="tag tag-info">No self serve affiliate link</span>
-        </div>
-      </div>
-      <p class="vendor-meta">Quote to Revenue (CPQ + CLM + billing): <b>custom / enterprise pricing</b> · dealhub.io</p>
-      <p class="vendor-desc">A CPQ platform that bundles configure price quote, contract lifecycle management, and billing under what it calls a "governed execution layer," aimed at RevOps teams handling complex, multi stakeholder B2B deals without heavy IT involvement.</p>
-      <div class="vendor-angle"><b>Agentic angle:</b> Markets a "DealAgent" acting inside its governed logic layer more heavily than any other CPQ vendor we reviewed, but we found no public technical documentation confirming the actual API scoping or permission model behind it: ambition is clear, the engineering evidence isn't yet.</div>
-      <div class="vendor-cta-row">
-        <a class="btn-ghost btn-sm" href="https://dealhub.io/" target="_blank" rel="noopener nofollow">Visit DealHub →</a>
-        <span style="font-size:0.75rem; color:var(--mist);">Runs a customer advocacy referral program, not a self serve tracked affiliate link.</span>
+        <a class="btn btn-sm" href="#" data-affiliate="freshbooks">Try FreshBooks free →</a>
       </div>
     </div>
 
@@ -126,7 +125,7 @@
 <div class="band">
   <div class="band-inner">
     <div>
-      <h2>CPQ is one of twelve categories.</h2>
+      <h2>Accounting is one of twelve categories.</h2>
       <p class="band-sub">See the full stack across all twelve categories, from CRM to support and helpdesk.</p>
     </div>
     <a class="btn" href="/#categories">Back to all categories →</a>
