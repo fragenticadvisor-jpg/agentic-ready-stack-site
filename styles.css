@@ -5,6 +5,25 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Metric-matched local fallbacks for Barlow/Spectral: these local fonts are
+   remapped to the exact ascent/descent/line-gap box of the real webfont, so
+   the page renders in the final layout from first paint and swapping in the
+   webfont once it loads causes no reflow (eliminates font-swap CLS). */
+@font-face {
+  font-family: 'Barlow Fallback';
+  src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+  ascent-override: 100%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Spectral Fallback';
+  src: local('Georgia'), local('Times New Roman'), local('Liberation Serif');
+  ascent-override: 105.9%;
+  descent-override: 46.3%;
+  line-gap-override: 0%;
+}
+
 :root {
   --navy:    #0D1B2A;
   --navy2:   #122033;
@@ -33,7 +52,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--navy);
   color: var(--cream);
-  font-family: 'Barlow', Arial, sans-serif;
+  font-family: 'Barlow', 'Barlow Fallback', Arial, sans-serif;
   font-weight: 300;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -56,7 +75,7 @@ img { max-width: 100%; display: block; }
 }
 .skip-link:focus { left: 1rem; top: 1rem; }
 
-.serif { font-family: 'Spectral', Georgia, serif; }
+.serif { font-family: 'Spectral', 'Spectral Fallback', Georgia, serif; }
 
 /* ── LAYOUT ── */
 .wrap { max-width: 1360px; margin: 0 auto; padding: 0 32px; }
@@ -80,7 +99,7 @@ header.site nav.inner {
   gap: 1.25rem;
 }
 .logo {
-  font-family: 'Spectral', serif;
+  font-family: 'Spectral', 'Spectral Fallback', serif;
   font-size: 1.05rem;
   color: var(--gold);
   letter-spacing: 0.03em;
@@ -116,13 +135,13 @@ header.site nav.inner {
   display: flex; align-items: center; gap: 0.5rem;
   background: var(--navy2); border: 1px solid var(--rule); color: var(--mist);
   padding: 0.55rem; border-radius: var(--radius); cursor: pointer;
-  font-family: 'Barlow', sans-serif; font-size: 0.78rem;
+  font-family: 'Barlow', 'Barlow Fallback', sans-serif; font-size: 0.78rem;
   transition: border-color 0.2s, color 0.2s;
 }
 .search-trigger:hover { border-color: var(--gold); color: var(--gold); }
 .search-trigger svg { width: 15px; height: 15px; flex-shrink: 0; }
 .search-trigger kbd {
-  font-family: 'Barlow', sans-serif; font-size: 0.68rem; color: var(--mist);
+  font-family: 'Barlow', 'Barlow Fallback', sans-serif; font-size: 0.68rem; color: var(--mist);
   border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.35rem; margin-left: 0.2rem;
 }
 .search-trigger-label, .search-trigger kbd { display: none; }
@@ -147,7 +166,7 @@ a.navlink-cta { display: none; }
 .nav-dropdown-trigger {
   display: flex; align-items: center; gap: 0.35rem;
   background: transparent; border: none; margin: 0; cursor: pointer;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Barlow', 'Barlow Fallback', sans-serif;
   color: var(--mist); text-decoration: none; font-size: 0.76rem; font-weight: 500;
   letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s;
   white-space: nowrap; position: relative; padding: 0.3rem 0;
@@ -202,7 +221,7 @@ a.navlink-cta { display: none; }
 .search-input-row svg { width: 17px; height: 17px; color: var(--mist); flex-shrink: 0; }
 .search-input-row input {
   flex: 1; background: transparent; border: none; outline: none; color: var(--cream);
-  font-family: 'Barlow', sans-serif; font-size: 1rem; font-weight: 300;
+  font-family: 'Barlow', 'Barlow Fallback', sans-serif; font-size: 1rem; font-weight: 300;
 }
 .search-input-row input::placeholder { color: var(--mist); }
 .search-esc { font-size: 0.68rem; color: var(--mist); border: 1px solid var(--rule); border-radius: 3px; padding: 0.15rem 0.4rem; flex-shrink: 0; }
@@ -213,7 +232,7 @@ a.navlink-cta { display: none; }
 }
 .search-result.active, .search-result:hover { background: var(--navy4); }
 .search-result-cat { font-size: 0.65rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; }
-.search-result-title { font-family: 'Spectral', serif; font-size: 0.98rem; margin: 0.15rem 0 0.15rem; }
+.search-result-title { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 0.98rem; margin: 0.15rem 0 0.15rem; }
 .search-result-desc { font-size: 0.8rem; color: var(--mist); line-height: 1.5; }
 .search-empty { padding: 2.5rem 1.5rem; text-align: center; color: var(--mist); font-size: 0.88rem; }
 .search-hint { padding: 0.6rem 1.2rem; border-top: 1px solid var(--rule); font-size: 0.7rem; color: var(--mist); display: flex; gap: 1.2rem; }
@@ -243,7 +262,7 @@ a.navlink-cta { display: none; }
 @media (prefers-reduced-motion: reduce) { .pulse-dot { animation: none; } }
 
 .hero h1 {
-  font-family: 'Spectral', serif;
+  font-family: 'Spectral', 'Spectral Fallback', serif;
   font-size: clamp(2.3rem, 5vw, 4rem);
   line-height: 1.1;
   color: var(--white);
@@ -310,7 +329,7 @@ a.navlink-cta { display: none; }
   display: flex; flex-wrap: wrap; gap: 2.25rem; align-items: center;
 }
 .stat-strip-item { display: flex; align-items: baseline; gap: 0.5rem; }
-.stat-strip-item b { font-family: 'Spectral', serif; font-size: 1.5rem; color: var(--gold); line-height: 1; }
+.stat-strip-item b { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 1.5rem; color: var(--gold); line-height: 1; }
 .stat-strip-item span { font-size: 0.78rem; color: var(--mist); }
 .stat-strip-note { margin-left: auto; font-size: 0.76rem; color: var(--mist); }
 .stat-strip-note a { color: var(--gold); text-decoration: none; }
@@ -330,7 +349,7 @@ a.navlink-cta { display: none; }
   margin-bottom: 0.9rem;
 }
 .section h2 {
-  font-family: 'Spectral', serif;
+  font-family: 'Spectral', 'Spectral Fallback', serif;
   font-size: clamp(1.7rem, 3.6vw, 2.6rem);
   color: var(--white);
   line-height: 1.2;
@@ -354,16 +373,16 @@ a.navlink-cta { display: none; }
   background: radial-gradient(circle, rgba(201,168,76,0.16) 0%, transparent 70%); pointer-events: none;
 }
 .featured-issue-num {
-  font-family: 'Spectral', serif; font-size: 3.6rem; color: var(--gold); line-height: 1; white-space: nowrap;
+  font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 3.6rem; color: var(--gold); line-height: 1; white-space: nowrap;
 }
-.featured-issue-num span { display: block; font-family: 'Barlow', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); margin-top: 0.5rem; }
+.featured-issue-num span { display: block; font-family: 'Barlow', 'Barlow Fallback', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); margin-top: 0.5rem; }
 .featured-issue-badge {
   display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); background: var(--gold);
   padding: 0.25rem 0.6rem; border-radius: 3px; margin-bottom: 0.9rem;
 }
 .featured-issue-meta { font-size: 0.78rem; color: var(--mist); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem; }
-.featured-issue h3 { font-family: 'Spectral', serif; font-size: 1.7rem; color: var(--white); line-height: 1.3; margin-bottom: 0.85rem; max-width: 50ch; }
+.featured-issue h3 { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 1.7rem; color: var(--white); line-height: 1.3; margin-bottom: 0.85rem; max-width: 50ch; }
 .featured-issue p { font-size: 1rem; color: var(--mist); line-height: 1.7; max-width: 65ch; margin-bottom: 1.1rem; }
 .featured-issue-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
 .chip {
@@ -390,9 +409,9 @@ a.navlink-cta { display: none; }
   position: relative;
 }
 .cat-card:hover { background: var(--navy2); }
-.cat-num { font-family: 'Spectral', serif; font-size: 1.85rem; color: var(--rule); line-height: 1; margin-bottom: 0.9rem; transition: color 0.2s; }
+.cat-num { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 1.85rem; color: var(--rule); line-height: 1; margin-bottom: 0.9rem; transition: color 0.2s; }
 .cat-card:hover .cat-num { color: var(--gold); }
-.cat-card h3 { font-family: 'Spectral', serif; font-size: 1.25rem; color: var(--white); margin-bottom: 0.6rem; line-height: 1.3; }
+.cat-card h3 { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 1.25rem; color: var(--white); margin-bottom: 0.6rem; line-height: 1.3; }
 .cat-card .layer-tag {
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 0.6rem; display: block;
@@ -437,11 +456,11 @@ a.navlink-cta { display: none; }
   border-radius: 8px 0 0 8px;
 }
 .vendor-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
-.vendor-name { font-family: 'Spectral', serif; font-size: 1.5rem; color: var(--white); display: flex; align-items: center; gap: 0.7rem; }
+.vendor-name { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 1.5rem; color: var(--white); display: flex; align-items: center; gap: 0.7rem; }
 .vendor-name .rank {
   display: inline-flex; align-items: center; justify-content: center;
   width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 1px solid var(--rule);
-  color: var(--gold); font-size: 0.85rem; font-family: 'Barlow', sans-serif; font-weight: 600; flex-shrink: 0;
+  color: var(--gold); font-size: 0.85rem; font-family: 'Barlow', 'Barlow Fallback', sans-serif; font-weight: 600; flex-shrink: 0;
 }
 .vendor-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .tag {
@@ -472,7 +491,7 @@ a.navlink-cta { display: none; }
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
 .pillar { background: var(--navy); padding: 2.25rem 2rem; transition: background 0.2s; }
 .pillar:hover { background: var(--navy2); }
-.pillar-num { font-family: 'Spectral', serif; font-size: 2.15rem; color: var(--rule); line-height: 1; margin-bottom: 1rem; }
+.pillar-num { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 2.15rem; color: var(--rule); line-height: 1; margin-bottom: 1rem; }
 .pillar h3 { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.04em; color: var(--gold); margin-bottom: 0.75rem; }
 .pillar p { font-size: 0.92rem; color: var(--mist); line-height: 1.65; }
 
@@ -488,9 +507,9 @@ ol.layers li.this-site { background: rgba(201,168,76,0.05); }
 ol.layers li::before {
   content: counter(layer, decimal-leading-zero);
   position: absolute; left: 0; top: 1rem;
-  font-family: 'Barlow', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--gold);
+  font-family: 'Barlow', 'Barlow Fallback', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--gold);
 }
-ol.layers li strong { display: block; font-family: 'Barlow', sans-serif; margin-bottom: 0.2rem; color: var(--white); }
+ol.layers li strong { display: block; font-family: 'Barlow', 'Barlow Fallback', sans-serif; margin-bottom: 0.2rem; color: var(--white); }
 ol.layers li span { color: var(--mist); font-size: 0.92rem; }
 ol.layers li .here-tag {
   display: inline-block; margin-left: 0.6rem; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em;
@@ -510,7 +529,7 @@ table.compare td { color: var(--mist); }
 }
 .definition strong { color: var(--gold); }
 .callout {
-  font-family: 'Spectral', serif; font-style: italic; font-size: 1.15rem; line-height: 1.55; color: var(--gold-lt);
+  font-family: 'Spectral', 'Spectral Fallback', serif; font-style: italic; font-size: 1.15rem; line-height: 1.55; color: var(--gold-lt);
   margin: 2rem 0; padding: 1.4rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
 }
 
@@ -520,13 +539,13 @@ table.compare td { color: var(--mist); }
   max-width: 1360px; margin: 0 auto; padding: 3.75rem 32px;
   display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
 }
-.band-inner h2 { font-family: 'Spectral', serif; font-size: clamp(1.4rem, 2.6vw, 2rem); color: var(--white); max-width: 42ch; line-height: 1.3; }
+.band-inner h2 { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: clamp(1.4rem, 2.6vw, 2rem); color: var(--white); max-width: 42ch; line-height: 1.3; }
 .band-inner h2 em { font-style: normal; color: var(--gold); }
 .band-inner p.band-sub { color: var(--mist); font-size: 0.9rem; max-width: 44ch; margin-top: 0.5rem; }
 
 /* ── SUBSCRIBE BOX ── */
 .subscribe-box { border: 1px solid var(--rule); background: var(--navy2); padding: 2.75rem; border-radius: 10px; }
-.subscribe-box h3 { font-family: 'Spectral', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 0.6rem; }
+.subscribe-box h3 { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 0.6rem; }
 .subscribe-box p { font-size: 0.9rem; color: var(--mist); max-width: 56ch; margin-bottom: 1.5rem; }
 .subscribe-frame-wrap { max-width: 520px; }
 .subscribe-fallback { font-size: 0.78rem; color: var(--mist); margin-top: 0.8rem; }
@@ -534,8 +553,8 @@ table.compare td { color: var(--mist); }
 
 /* ── ARTICLE / PROSE ── */
 .prose p { font-size: 1.08rem; color: var(--cream); opacity: 0.92; margin-bottom: 1.3rem; line-height: 1.8; }
-.prose h2 { font-family: 'Spectral', serif; font-size: 1.65rem; color: var(--white); margin: 2.5rem 0 1rem; }
-.prose h3 { font-family: 'Barlow', sans-serif; font-size: 1rem; letter-spacing: 0.02em; color: var(--gold); margin: 1.75rem 0 0.5rem; text-transform: uppercase; font-weight: 600; }
+.prose h2 { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 1.65rem; color: var(--white); margin: 2.5rem 0 1rem; }
+.prose h3 { font-family: 'Barlow', 'Barlow Fallback', sans-serif; font-size: 1rem; letter-spacing: 0.02em; color: var(--gold); margin: 1.75rem 0 0.5rem; text-transform: uppercase; font-weight: 600; }
 .prose ul, .prose ol { color: var(--cream); opacity: 0.92; padding-left: 1.4rem; margin-bottom: 1.3rem; }
 .prose li { margin-bottom: 0.6rem; }
 .disclosure-inline {
@@ -561,7 +580,7 @@ footer.site { border-top: 1px solid var(--rule); background: var(--navy3); }
 .footer-inner { max-width: 1360px; margin: 0 auto; padding: 3.5rem 32px 2.5rem; }
 .footer-top { display: flex; justify-content: space-between; gap: 3rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .footer-brand { max-width: 320px; }
-.footer-name { font-family: 'Spectral', serif; font-size: 1.05rem; color: var(--gold); margin-bottom: 0.6rem; }
+.footer-name { font-family: 'Spectral', 'Spectral Fallback', serif; font-size: 1.05rem; color: var(--gold); margin-bottom: 0.6rem; }
 .footer-sub { font-size: 0.82rem; color: var(--mist); line-height: 1.6; }
 .footer-sub a { color: var(--mist); }
 .footer-cols { display: flex; gap: 3rem; flex-wrap: wrap; }
