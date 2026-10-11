@@ -167,3 +167,20 @@
     }
   });
 })();
+
+/* ---------- Signal subscribe form: load on demand ---------- */
+(function () {
+  var btn = document.getElementById('subscribeLoadBtn');
+  var wrap = document.getElementById('subscribeFrameWrap');
+  if (!btn || !wrap) return;
+  btn.addEventListener('click', function () {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://tally.so/embed/0QWOq0?alignLeft=1&hideTitle=1&transparentBackground=1';
+    iframe.width = '100%';
+    iframe.height = '320';
+    iframe.frameBorder = '0';
+    iframe.title = 'Subscribe to Signal';
+    wrap.innerHTML = '';
+    wrap.appendChild(iframe);
+  });
+})();
