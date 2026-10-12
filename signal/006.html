@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal #006: Gusto's MCP server learns to serve the accountant, not just the employer. Sierra and Meta propose one protocol for every agent. | The Agentic Stack</title>
+<meta name="description" content="Signal #006: Gusto launches a multi-client Model Context Protocol capability for accountants managing many clients' payroll through one AI conversation, approval still required on every change. Sierra and Meta publish the open 'Personal Agent Protocol' for consumer agents to transact with any business, Stripe and Shopify named as backers and MCP named as a compliant transport, though the formal spec itself isn't out yet. Plus: a correction on Clari, where a paused 'Copilot MCP Server' and a live-but-undocumented 'Salesloft MCP Server' turn out to be two different things, not one story.">
+<link rel="canonical" href="https://agenticreadystack.com/signal/006.html">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=optional" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L32PZC9KGH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L32PZC9KGH');
+</script>
+<style>
+.sig{border-top:1px solid var(--rule);padding:2.25rem 0;}
+.sig-head{display:flex;align-items:center;gap:0.9rem;margin-bottom:0.9rem;flex-wrap:wrap;}
+.sig-num{
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+  width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--rule);
+  font-family:'Spectral',serif;font-size:0.95rem;color:var(--gold);line-height:1;background:var(--navy2);
+}
+.sig h3{font-family:'Spectral',serif;font-size:1.32rem;font-weight:600;color:var(--cream);line-height:1.35;margin:0 0 0.7rem;max-width:60ch;}
+.sig p{margin:0 0 0.8rem;max-width:74ch;font-size:1.02rem;}
+.sig-take{border-left:2px solid var(--gold);padding-left:1rem;color:var(--cream);border-radius:0 4px 4px 0;}
+.sig-src{font-size:0.76rem;color:var(--mist);}
+.sig-src a{color:var(--gold);text-decoration:none;}
+.sig-src a:hover{text-decoration:underline;}
+.sig-toc{border:1px solid var(--rule);border-radius:8px;padding:1.25rem 1.5rem;margin-top:1.75rem;}
+.sig-toc-label{font-size:0.68rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:0.8rem;}
+.sig-toc ol{list-style:none;padding:0;margin:0;counter-reset:toc;}
+.sig-toc li{counter-increment:toc;padding:0.45rem 0;font-size:0.85rem;}
+.sig-toc a{color:var(--mist);text-decoration:none;}
+.sig-toc a:hover{color:var(--gold);}
+.sig-toc a::before{content:counter(toc,decimal-leading-zero) "  ";color:var(--gold);font-weight:600;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site" id="siteHeader">
+  <nav class="inner">
+    <a class="logo" href="/">The <span>Agentic</span> Stack</a>
+    <div class="navlinks" id="navLinks">
+      <div class="nav-dropdown" id="catDropdown">
+        <button class="nav-dropdown-trigger" id="catDropdownTrigger" type="button" aria-haspopup="true" aria-expanded="false">
+          Categories
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown-panel" id="catDropdownPanel">
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Go-to-Market</p>
+            <a href="/categories/crm.html">CRM &amp; Pipeline</a>
+            <a href="/categories/marketing-automation.html">Marketing Automation</a>
+            <a href="/categories/gtm-sales-engagement.html">GTM &amp; Sales Engagement</a>
+            <a href="/categories/sales-enablement.html">Sales Enablement &amp; Revenue Intelligence</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Pricing &amp; Packaging</p>
+            <a href="/categories/cpq.html">CPQ</a>
+            <a href="/categories/pricing-strategy.html">Pricing &amp; Packaging Strategy</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Revenue Architecture</p>
+            <a href="/categories/billing-metering.html">Billing &amp; Usage Metering</a>
+            <a href="/categories/sales-compensation.html">Sales Compensation</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Customer Operations</p>
+            <a href="/categories/customer-success.html">Customer Success &amp; Adoption</a>
+            <a href="/categories/support-helpdesk.html">Support &amp; Helpdesk</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Finance &amp; Operations</p>
+            <a href="/categories/accounting.html">Accounting</a>
+            <a href="/categories/hr-payroll.html">HR &amp; Payroll</a>
+          </div>
+          <div class="nav-dropdown-footer">
+            <a href="/#categories">View all 12 categories &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <a href="/registry.html">Registry</a>
+      <a href="/signal/" class="active">Signal</a>
+      <a href="/commercial-readiness.html">Commercial Readiness</a>
+      <a href="/content.html">Content</a>
+      <a href="/about.html">Methodology</a>
+      <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">The Model ↗</a>
+      <a class="btn btn-sm navlink-cta" href="https://tally.so/r/ODZgQa" target="_blank" rel="noopener">Take the Free Benchmark →</a>
+    </div>
+    <div class="nav-actions">
+      <button class="search-trigger" id="searchTrigger" type="button" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span class="search-trigger-label">Search</span><kbd>⌘K</kbd>
+      </button>
+      <a class="btn btn-sm" href="https://tally.so/r/ODZgQa" target="_blank" rel="noopener">Take the Free Benchmark →</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search vendors, Signal issues, guides…" autocomplete="off">
+      <span class="search-esc">ESC</span>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span></div>
+  </div>
+</div>
+
+
+<section class="section-narrow" style="padding-bottom:0.5rem;" id="main">
+  <p class="crumb"><a href="/">Home</a> / <a href="/signal/">Signal</a> / #006</p>
+  <p class="section-label">Signal #006 &middot; 12 October 2026</p>
+  <h1 style="max-width:none; font-size:1.5rem; font-weight:700;">Gusto's MCP server learns to serve the accountant, not just the employer. Sierra and Meta propose one protocol for every agent.</h1>
+  <p class="section-intro">Signal is a weekly note on what actually changed in the commercial software stack (pricing models, agent interfaces, ownership) tagged to the layer of the Agentic Commercial Model it belongs to. A link to the document behind every claim, and no filler to hit a quota: this issue is three items, because three is what the documentation actually supports.</p>
+  <div class="disclosure-inline">Checked against the 5 October 2026 <a href="/registry.html">Agent Access Registry</a> baseline: all 43 vendors' developer documentation, changelogs, GitHub repos and official press pages re-verified against that dated row. No vendor's MCP, API or write-access status moved this week, so the registry itself is unchanged.</div>
+  <div class="sig-toc">
+    <p class="sig-toc-label">In this issue</p>
+    <ol>
+      <li><a href="#item-01">Gusto's MCP server learns to serve the accountant managing many clients, not just one employer.</a></li>
+      <li><a href="#item-02">Sierra and Meta propose a shared protocol for consumer agents to transact with any business. The spec itself isn&rsquo;t out yet.</a></li>
+      <li><a href="#item-03">Clari's write-back MCP isn&rsquo;t one server. It's two, and only one has a &lsquo;paused&rsquo; notice with its name on it.</a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:1rem;">
+<article class="sig" id="item-01">
+  <div class="sig-head"><span class="sig-num">01</span><span class="tag tag-agentic-mid">Finance and Operations &middot; HR and Payroll</span></div>
+  <h3>Gusto's MCP server learns to serve the accountant managing many clients, not just one employer.</h3>
+  <p>Gusto's Oct 7, 2026 &ldquo;Gusto Next&rdquo; event relaunched its accountant product, Gusto Pro, adding what Gusto's own announcement calls a &ldquo;multi-client Model Context Protocol (MCP)&rdquo;: an accountant connects once, picks which of their client accounts an AI conversation can reach, asks cross-client questions, and can have the agent prepare payroll changes (hours, earnings, time off, payment methods) or run background weekly routines such as scanning client emails for hours. Gusto is explicit about the guardrail: &ldquo;every change still comes back to the accountant to review and approve before anything is updated in Gusto.&rdquo; The announcement names the capability but not the architecture: no auth method, scope list or tool names are disclosed, and it isn't stated whether multi-client access runs through the same mcp.api.gusto.com endpoint already on file in our registry or a separate one.</p>
+  <p class="sig-take"><b>Why it matters:</b> Gusto's existing employer-facing MCP server already cleared this registry's bar for a documented, write-capable interface back in September. This is a different buyer: not the company running its own payroll, but the accounting firm managing dozens of clients' payroll through one agent conversation &mdash; a genuinely new wedge for who gets to hold the agent relationship. It's also a reminder not to grade a vendor once and move on: &ldquo;documented MCP server&rdquo; can describe more than one surface with different scopes under the same vendor name, and a scorecard that collapses them into a single pill misses exactly the distinction this registry exists to hold onto. We're not changing Gusto's registry row this week &mdash; the architecture gap means we can't yet write a specific, checkable claim about this surface &mdash; but it's one to watch.</p>
+  <p class="sig-src">Source: <a href="https://gusto.com/company-news/introducing-the-new-gusto-pro" target="_blank" rel="noopener nofollow">Gusto: Introducing the new Gusto Pro</a> &middot; <a href="https://gusto.com/product/integrations/gusto-mcp" target="_blank" rel="noopener nofollow">Gusto: Gusto MCP (existing employer-facing server, for comparison)</a></p>
+</article>
+<article class="sig" id="item-02">
+  <div class="sig-head"><span class="sig-num">02</span><span class="tag tag-agentic-mid">Layer 6 + 8 &middot; Billing and Usage Metering</span></div>
+  <h3>Sierra and Meta propose a shared protocol for consumer agents to transact with any business. The spec itself isn&rsquo;t out yet.</h3>
+  <p>On Oct 6, 2026, Sierra and Meta introduced the &ldquo;Personal Agent Protocol&rdquo; (PAP): an open standard for how a consumer's own AI agent authenticates to a business and transacts on their behalf. Stripe and Shopify are named backers quoted directly on the announcement; Walmart, Genesys, Instinct and Rocket are listed as partners without quotes. Per Sierra's own post, a PAP session runs over OAuth, the customer (not the business) decides whether their agent gets read-only or write access, businesses separately set the parameters for what any agent can do, and a business can expose itself to PAP agents through interfaces &ldquo;built on standards such as MCP and OpenAPI,&rdquo; or through its own conversational agent. Sierra states a formal v0.1 spec and reference implementation are coming &ldquo;later this month&rdquo; &mdash; as of this issue, neither has shipped.</p>
+  <p class="sig-take"><b>Why it matters:</b> this isn't a claim about any one vendor in the registry &mdash; it's an attempt to standardize exactly the boundary this column has been checking vendor by vendor since issue #001: who authenticates, what scope they get, read or write. If PAP ships a real spec and Stripe actually builds to it, billing and usage-metering vendors would have a template for an agent interface built for an external consumer's own agent, rather than each inventing its own (right now, not one of the five vendors we track in that layer publishes anything aimed at a customer's own agent rather than the vendor's own integration partners). For now it's a blog post and a promised date, which is precisely the category this site exists to be skeptical of: DealHub's October deadline, two issues back, was also just a blog post and a promised date. We'll check back when the spec is actually out.</p>
+  <p class="sig-src">Source: <a href="https://sierra.ai/blog/introducing-personal-agent-protocol" target="_blank" rel="noopener nofollow">Sierra: Introducing the Personal Agent Protocol</a></p>
+</article>
+<article class="sig" id="item-03">
+  <div class="sig-head"><span class="sig-num">03</span><span class="tag tag-agentic-mid">Layer 4 &middot; Sales Enablement and Revenue Intelligence</span></div>
+  <h3>Clari's write-back MCP isn&rsquo;t one server. It's two, and only one has a &lsquo;paused&rsquo; notice with its name on it.</h3>
+  <p>Our Sep 28 note described Clari's &ldquo;Copilot MCP Server&rdquo; &mdash; the write-back tool for its forecasting product &mdash; as quietly pulled from release notes with no new date. Rechecking this week surfaces a second, broader surface under the merged Salesloft/Clari brand: a &ldquo;Salesloft MCP Server,&rdquo; live since April 2026 and expanded July 9, 2026 per Salesloft's own newsroom, which states it adds &ldquo;write-back capabilities, so AI tools can take action inside Salesloft and Clari&rdquo; and is listed in Claude's connector directory &ldquo;with no custom setup required.&rdquo; That press release links to no developer portal, API reference or tool schema anywhere on the page. developer.clari.com &mdash; blocked to an automated fetch by its own robots.txt both this week and in our Sep 28 check &mdash; remains, as far as we can verify, limited to the plain REST export-jobs spec found in August.</p>
+  <p class="sig-take"><b>Why it matters:</b> these are two different claims, not one story moving forward. The forecasting-specific Copilot MCP Server is explicitly paused with no date attached. A separate, broader Salesloft MCP Server claims live write-back into Clari today, distributed through a connector directory rather than published as a vendor-run technical spec. If you're evaluating Clari for agent write access, which of the two you're being sold matters, and neither one currently clears this registry's documentation bar &mdash; which is exactly why the row stays &ldquo;Unclear,&rdquo; just for a sharper reason than it did in September.</p>
+  <p class="sig-src">Source: <a href="https://www.salesloft.com/company/newsroom/salesloft-mcp-server-revenue-data-ai-ecosystem" target="_blank" rel="noopener nofollow">Salesloft: Salesloft MCP Server newsroom</a> &middot; <a href="https://community.salesloft.com/product-q-a-11/why-was-copilot-mcp-server-removed-from-the-july-release-notes-2789" target="_blank" rel="noopener nofollow">Salesloft community: Copilot MCP Server removed</a> &middot; <a href="https://developer.clari.com/documentation/external_spec" target="_blank" rel="noopener nofollow">Clari developer docs</a></p>
+</article>
+</section>
+
+<div class="band">
+  <div class="band-inner">
+    <div>
+      <h2>Signal lands weekly. The registry updates with it.</h2>
+      <p class="band-sub">Layer tagged, evidence linked. If something here is wrong or out of date, tell us and we will re check and re date the row.</p>
+    </div>
+    <a class="btn" href="/registry.html">Open the registry &rarr;</a>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">The Agentic Stack</div>
+        <p class="footer-sub">Reviews are independently researched: see our <a href="/disclosure.html">disclosure</a>. Published by <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman</a>.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <p class="footer-col-h">Site</p>
+          <div class="footer-col">
+            <a href="/registry.html">Registry</a>
+            <a href="/signal/">Signal</a>
+            <a href="/commercial-readiness.html">Commercial Readiness</a>
+            <a href="/content.html">Content</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-h">About</p>
+          <div class="footer-col">
+            <a href="/about.html">Methodology</a>
+            <a href="/disclosure.html">Disclosure</a>
+            <a href="mailto:fessal@agenticreadystack.com">Contact</a>
+            <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Agentic Stack.</span>
+      <span>Every claim links to the document it rests on.</span>
+    </div>
+  </div>
+</footer>
+
+<script defer src="/site.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
