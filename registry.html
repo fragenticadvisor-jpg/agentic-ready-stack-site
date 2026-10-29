@@ -143,7 +143,7 @@ table.sum td.zero{color:var(--warn);}
 
 <section class="section-narrow" style="padding-bottom:1rem;" id="main">
   <p class="crumb"><a href="/">Home</a> / Agent Access Registry</p>
-  <p class="section-label">Registry · Updated 5 October 2026</p>
+  <p class="section-label">Registry · Updated 29 October 2026</p>
   <h1 style="max-width:none; font-size:1.5rem; font-weight:700;">Which commercial software can an AI agent actually act inside?</h1>
   <p class="section-intro">Not which vendors say "agentic", which ones publish an interface an external agent can authenticate against and use. Every row below was checked against the vendor's own documentation on the date shown, and links to the specific page the finding rests on. Where we found nothing, we say so rather than leaving it blank.</p>
   <div class="reg-stats">
@@ -154,7 +154,7 @@ table.sum td.zero{color:var(--warn);}
 </section>
 
 <section class="section-narrow" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-  <p class="callout">As of 5 October 2026, Sales Compensation &amp; Incentive Management (Layer 5 of the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>) remains the only category where no vendor ships an agent interface; the one vendor there advertising an MCP server as &ldquo;coming soon&rdquo; (CaptivateIQ) still has no technical documentation behind it. HR &amp; Payroll clears its own version of that bar this week: Rippling&rsquo;s MCP server resolves from claimed-but-unverifiable to fully documented, joining Deel and Gusto, so all three HR &amp; Payroll vendors we track now publish a documented agent interface. CPQ&rsquo;s DealHub missed the deadline it set for itself: its own October 2026 GA date for &ldquo;MCP for Admin&rdquo; arrived with developers.dealhub.io showing nothing new. Several vendors across these layers do expose REST APIs an agent can write through &mdash; PROS, previously at zero on every column, turns out to be one of them; none will sell you a documented agent interface for it. You build it yourself, or you don't have one.</p>
+  <p class="callout">As of 29 October 2026, Sales Compensation &amp; Incentive Management (Layer 5 of the <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener" style="color:var(--gold);">Agentic Commercial Model</a>) remains the only category where no vendor ships an agent interface; the one vendor there advertising an MCP server as &ldquo;coming soon&rdquo; (CaptivateIQ) still has no technical documentation behind it, and its own FAQ now pushes the target to 2027. HR &amp; Payroll holds the three-vendor sweep it reached in October: Deel, Gusto and Rippling all publish a documented agent interface. CPQ&rsquo;s DealHub has now fully missed the deadline it set for itself: October has ended with developers.dealhub.io showing nothing new, and the only MCP package carrying DealHub&rsquo;s name belongs to an unaffiliated individual developer, not the vendor. Several vendors across these layers do expose REST APIs an agent can write through &mdash; PROS, previously at zero on every column, turns out to be one of them; none will sell you a documented agent interface for it. You build it yourself, or you don't have one.</p>
   <table class="sum"><tr><td>GTM &amp; Sales Engagement</td><td class="dim">Layer 2</td><td class=""><b>3</b> / 3</td></tr><tr><td>Marketing Automation</td><td class="dim">Layer 2</td><td class=""><b>5</b> / 5</td></tr><tr><td>CRM &amp; Pipeline</td><td class="dim">Layer 9</td><td class=""><b>2</b> / 3</td></tr><tr><td>Sales Enablement &amp; Revenue Intelligence</td><td class="dim">Layer 4</td><td class=""><b>2</b> / 3</td></tr><tr><td>Customer Success &amp; Adoption</td><td class="dim">Layer 7</td><td class=""><b>3</b> / 5</td></tr><tr><td>Billing &amp; Usage Metering</td><td class="dim">Layer 6 + 8</td><td class=""><b>2</b> / 5</td></tr><tr><td>CPQ</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Pricing &amp; Packaging Strategy</td><td class="dim">Layer 3</td><td class=""><b>1</b> / 3</td></tr><tr><td>Sales Compensation &amp; Incentive Management</td><td class="dim">Layer 5</td><td class="zero"><b>0</b> / 4</td></tr><tr><td>Accounting</td><td class="dim">Finance &amp; Operations</td><td class=""><b>3</b> / 3</td></tr><tr><td>HR &amp; Payroll</td><td class="dim">Finance &amp; Operations</td><td class=""><b>3</b> / 3</td></tr><tr><td>Support &amp; Helpdesk</td><td class="dim">Customer Operations</td><td class=""><b>2</b> / 3</td></tr></table>
 </section>
 
@@ -227,9 +227,9 @@ table.sum td.zero{color:var(--warn);}
 <td><span class="pill warn">Claimed, undocumented</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td><span class="pill ok">Documented</span></td>
-<td class="nowrap"><a href="https://www.globenewswire.com/news-release/2026/09/09/3358917/0/en/DealHub-Introduces-MCP-for-Admin.html" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Oct 5, 2026</td>
-<td class="note">Sep 9, 2026 press release announced &quot;MCP for Admin&quot; (agentic configuration of pricing rules, approval workflows and guided selling) with GA stated as October 2026. October has arrived: developers.dealhub.io's own llms.txt page index still lists no MCP page, and no auth method, scopes or tool schema have been published anywhere on the site. The only MCP package carrying DealHub's name we could find is a community-built npm module under an individual's personal GitHub account, not something DealHub itself publishes. Documented REST APIs (incl. Headless Quotes) remain the only working surface; third-party wrappers (e.g. Zapier MCP) unaffected.</td>
+<td class="nowrap"><a href="https://developers.dealhub.io/llms.txt" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Oct 29, 2026</td>
+<td class="note">Sep 9, 2026 press release announced &quot;MCP for Admin&quot; (agentic configuration of pricing rules, approval workflows and guided selling) with GA stated as October 2026. October has now fully passed: developers.dealhub.io's own llms.txt page index, covering roughly 350 documented endpoints, still contains zero mentions of MCP or Model Context Protocol, and no auth method, scopes or tool schema have been published anywhere on the site. DealHub's own newsroom shows nothing published in October 2026 corroborating the claim either. The only MCP package carrying DealHub's name is a community-built npm module under an individual's personal GitHub account, not something DealHub itself publishes or is affiliated with &mdash; a risk worth flagging on its own. Documented REST APIs (incl. Headless Quotes) remain the only working surface; third-party wrappers (e.g. Zapier MCP) unaffected.</td>
 </tr>
 <tr data-cat="cpq" data-mcp="official">
 <th scope="row"><a href="/categories/cpq.html#pandadoc">PandaDoc</a></th>
@@ -388,8 +388,8 @@ table.sum td.zero{color:var(--warn);}
 <td><span class="pill ok">Documented</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td class="nowrap"><a href="https://docs.customer.io/ai/mcp/get-started/" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Aug 21, 2026</td>
-<td class="note">First party MCP server (mcp.customer.io, EU variant) exposing the Journeys UI and CDP Data Pipelines APIs with granular scopes (read, read:sensitive, write, write:live, configure) each user authenticating with their own credentials.</td>
+<td class="nowrap dim">Oct 29, 2026</td>
+<td class="note">First party MCP server (mcp.customer.io, EU variant) exposing the Journeys UI and CDP Data Pipelines APIs with granular scopes (read, read:sensitive, write, write:live, configure) each user authenticating with their own credentials. Docs updated Oct 28, 2026 split the write surface into separate cio_write_api (POST/PUT/PATCH) and cio_delete_api (DELETE) tool categories under distinct scopes, so create/update access can be approved without separately approving deletion; the same update adds strict 422 validation on unknown fields and structured JSON error responses (a breaking change from the prior plain-text format).</td>
 </tr>
 <tr data-cat="marketing-automation" data-mcp="official">
 <th scope="row"><a href="/categories/marketing-automation.html#klaviyo">Klaviyo</a></th>
@@ -448,8 +448,8 @@ table.sum td.zero{color:var(--warn);}
 <td><span class="pill ok">Documented</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td class="nowrap"><a href="https://www.captivateiq.com/ai-agents" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Sep 14, 2026</td>
-<td class="note">New &ldquo;AI Agents&rdquo; page advertises a CaptivateIQ MCP Server for governed access to compensation and planning data, labelled &ldquo;Coming Soon&rdquo; with no auth method, scopes or tool schema; the first party developer site (token auth, Data Worksheet batch update, bulk import writes) is unchanged and still has no MCP content.</td>
+<td class="nowrap dim">Oct 29, 2026</td>
+<td class="note">New &ldquo;AI Agents&rdquo; page advertises a CaptivateIQ MCP Server for governed access to compensation and planning data, labelled &ldquo;Coming Soon&rdquo; with no auth method, scopes or tool schema; the first party developer site (token auth, Data Worksheet batch update, bulk import writes) is unchanged and still has no MCP content. The page's own FAQ now states the MCP Server is "expected to be brought to general availability in 2027," pushing the target well past the "Coming Soon" framing we first flagged.</td>
 </tr>
 <tr data-cat="sales-compensation" data-mcp="none_found">
 <th scope="row"><a href="/categories/sales-compensation.html#everstage">Everstage</a></th>
@@ -487,9 +487,9 @@ table.sum td.zero{color:var(--warn);}
 <td><span class="pill ok">Official</span></td>
 <td><span class="pill ok">Documented</span></td>
 <td><span class="pill warn">Unclear</span></td>
-<td class="nowrap"><a href="https://community.clari.com/product-q-a-6/why-was-copilot-mcp-server-removed-from-the-july-release-notes-2980" target="_blank" rel="noopener nofollow">Source ↗</a></td>
-<td class="nowrap dim">Sep 28, 2026</td>
-<td class="note">Clari and Salesloft now operate as one company under the Salesloft brand (Salesloft's own merger page). The write back "Copilot MCP Server" cited in the Salesloft help centre was quietly pulled from Clari's own July 2026 release notes; a Clari staff reply on its community forum (Jul 14, 2026) cites more testing time and gives no new date. developer.clari.com still documents only the plain REST export-jobs spec, no MCP or write back content.</td>
+<td class="nowrap"><a href="https://community.salesloft.com/product-q-a-11/why-was-copilot-mcp-server-removed-from-the-july-release-notes-2789" target="_blank" rel="noopener nofollow">Source ↗</a></td>
+<td class="nowrap dim">Oct 29, 2026</td>
+<td class="note">Clari and Salesloft now operate as one company under the Salesloft brand (Salesloft's own merger page). The write back "Copilot MCP Server" cited in the Salesloft help centre was quietly pulled from Clari's own July 2026 release notes; a Clari staff reply on its community forum (Jul 14, 2026) cites more testing time and gives no new date. developer.clari.com still documents only the plain REST export-jobs spec, no MCP or write back content, and remains blocked to automated fetches by its own robots.txt. Clari's customer community itself (community.clari.com) now 302-redirects into a dedicated Clari section inside community.salesloft.com; Salesloft's Sep 2, 2026 newsroom post confirms the brand consolidation ("Clari Forecast retains the Clari name," everything else becomes Salesloft-branded), and its merger FAQ says integrations/APIs are "unaffected for now" with no mention of developer.clari.com's fate.</td>
 </tr>
 <tr data-cat="sales-enablement" data-mcp="official">
 <th scope="row"><a href="/categories/sales-enablement.html#gong">Gong</a></th>
