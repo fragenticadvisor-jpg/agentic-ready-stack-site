@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal #009: We got ChurnZero's write access wrong. HubSpot's AI connectors get a read-only key to sensitive data. | The Agentic Stack</title>
+<meta name="description" content="Signal #009: ChurnZero's HTTP API has documented writes to Accounts and Contacts that our own Aug 21 note called read only - a correction that moves its registry grade to Documented. HubSpot's Oct 30 changelog lets Super Admins grant AI connectors read-only access to previously blocked Sensitive Data, with no new write scopes.">
+<link rel="canonical" href="https://agenticreadystack.com/signal/009.html">
+<meta property="og:title" content="Signal #009: We got ChurnZero's write access wrong. HubSpot's AI connectors get a read-only key to sensitive data. | The Agentic Stack">
+<meta property="og:description" content="Signal #009: ChurnZero's HTTP API has documented writes to Accounts and Contacts that our own Aug 21 note called read only - a correction that moves its registry grade to Documented. HubSpot's Oct 30 changelog lets Super Admins grant AI connectors read-only access to previously blocked Sensitive Data, with no new write scopes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://agenticreadystack.com/signal/009.html">
+<meta property="og:image" content="https://agenticreadystack.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Signal #009: We got ChurnZero's write access wrong. HubSpot's AI connectors get a read-only key to sensitive data. | The Agentic Stack">
+<meta name="twitter:description" content="Signal #009: ChurnZero's HTTP API has documented writes to Accounts and Contacts that our own Aug 21 note called read only - a correction that moves its registry grade to Documented. HubSpot's Oct 30 changelog lets Super Admins grant AI connectors read-only access to previously blocked Sensitive Data, with no new write scopes.">
+<meta name="twitter:image" content="https://agenticreadystack.com/og-image.png">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=optional" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L32PZC9KGH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L32PZC9KGH');
+</script>
+<style>
+.sig{border-top:1px solid var(--rule);padding:2.25rem 0;}
+.sig-head{display:flex;align-items:center;gap:0.9rem;margin-bottom:0.9rem;flex-wrap:wrap;}
+.sig-num{
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+  width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--rule);
+  font-family:'Spectral',serif;font-size:0.95rem;color:var(--gold);line-height:1;background:var(--navy2);
+}
+.sig h3{font-family:'Spectral',serif;font-size:1.32rem;font-weight:600;color:var(--cream);line-height:1.35;margin:0 0 0.7rem;max-width:60ch;}
+.sig p{margin:0 0 0.8rem;max-width:74ch;font-size:1.02rem;}
+.sig-take{border-left:2px solid var(--gold);padding-left:1rem;color:var(--cream);border-radius:0 4px 4px 0;}
+.sig-src{font-size:0.76rem;color:var(--mist);}
+.sig-src a{color:var(--gold);text-decoration:none;}
+.sig-src a:hover{text-decoration:underline;}
+.sig-toc{border:1px solid var(--rule);border-radius:8px;padding:1.25rem 1.5rem;margin-top:1.75rem;}
+.sig-toc-label{font-size:0.68rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:0.8rem;}
+.sig-toc ol{list-style:none;padding:0;margin:0;counter-reset:toc;}
+.sig-toc li{counter-increment:toc;padding:0.45rem 0;font-size:0.85rem;}
+.sig-toc a{color:var(--mist);text-decoration:none;}
+.sig-toc a:hover{color:var(--gold);}
+.sig-toc a::before{content:counter(toc,decimal-leading-zero) "  ";color:var(--gold);font-weight:600;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site" id="siteHeader">
+  <nav class="inner">
+    <a class="logo" href="/">The <span>Agentic</span> Stack</a>
+    <div class="navlinks" id="navLinks">
+      <div class="nav-dropdown" id="catDropdown">
+        <button class="nav-dropdown-trigger" id="catDropdownTrigger" type="button" aria-haspopup="true" aria-expanded="false">
+          Categories
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown-panel" id="catDropdownPanel">
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Go-to-Market</p>
+            <a href="/categories/crm.html">CRM &amp; Pipeline</a>
+            <a href="/categories/marketing-automation.html">Marketing Automation</a>
+            <a href="/categories/gtm-sales-engagement.html">GTM &amp; Sales Engagement</a>
+            <a href="/categories/sales-enablement.html">Sales Enablement &amp; Revenue Intelligence</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Pricing &amp; Packaging</p>
+            <a href="/categories/cpq.html">CPQ</a>
+            <a href="/categories/pricing-strategy.html">Pricing &amp; Packaging Strategy</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Revenue Architecture</p>
+            <a href="/categories/billing-metering.html">Billing &amp; Usage Metering</a>
+            <a href="/categories/sales-compensation.html">Sales Compensation</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Customer Operations</p>
+            <a href="/categories/customer-success.html">Customer Success &amp; Adoption</a>
+            <a href="/categories/support-helpdesk.html">Support &amp; Helpdesk</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <p class="nav-dropdown-h">Finance &amp; Operations</p>
+            <a href="/categories/accounting.html">Accounting</a>
+            <a href="/categories/hr-payroll.html">HR &amp; Payroll</a>
+          </div>
+          <div class="nav-dropdown-footer">
+            <a href="/#categories">View all 12 categories &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <a href="/registry.html">Registry</a>
+      <a href="/signal/" class="active">Signal</a>
+      <a href="/commercial-readiness.html">Commercial Readiness</a>
+      <a href="/content.html">Content</a>
+      <a href="/about.html">Methodology</a>
+      <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">The Model ↗</a>
+      <a class="btn btn-sm navlink-cta" href="https://tally.so/r/ODZgQa" target="_blank" rel="noopener">Take the Free Benchmark →</a>
+    </div>
+    <div class="nav-actions">
+      <button class="search-trigger" id="searchTrigger" type="button" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span class="search-trigger-label">Search</span><kbd>⌘K</kbd>
+      </button>
+      <a class="btn btn-sm" href="https://tally.so/r/ODZgQa" target="_blank" rel="noopener">Take the Free Benchmark →</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search vendors, Signal issues, guides…" autocomplete="off">
+      <span class="search-esc">ESC</span>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span></div>
+  </div>
+</div>
+
+
+<section class="section-narrow" style="padding-bottom:0.5rem;" id="main">
+  <p class="crumb"><a href="/">Home</a> / <a href="/signal/">Signal</a> / #009</p>
+  <p class="section-label">Signal #009 &middot; 6 November 2026</p>
+  <h1 style="max-width:none; font-size:1.5rem; font-weight:700;">We got ChurnZero's write access wrong. HubSpot's AI connectors get a read-only key to sensitive data.</h1>
+  <p class="section-intro">Signal is a weekly note on what actually changed in the commercial software stack (pricing models, agent interfaces, ownership) tagged to the layer of the Agentic Commercial Model it belongs to. A link to the document behind every claim, and no filler to hit a quota: this issue is two items, because two is what the documentation actually supports.</p>
+  <div class="disclosure-inline">Checked against the 3 November 2026 <a href="/registry.html">Agent Access Registry</a> baseline: the rows carrying a claimed-undocumented, third-party-only or unclear-write-access status, plus a general sweep for MCP and agent-interface news across all 43 tracked vendors and adjacent competitors, re-verified against that dated row. Two rows re-date below, to 6 November 2026; one changes grade.</div>
+  <div class="sig-toc">
+    <p class="sig-toc-label">In this issue</p>
+    <ol>
+      <li><a href="#item-01">ChurnZero's REST API already writes to Accounts and Contacts. Our own note called it read only.</a></li>
+      <li><a href="#item-02">HubSpot's AI connectors get a read-only key to Sensitive Data. The write surface doesn't move.</a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:1rem;">
+<article class="sig" id="item-01">
+  <div class="sig-head"><span class="sig-num">01</span><span class="tag tag-agentic-mid">Layer 7 &middot; Customer Success &amp; Adoption</span></div>
+  <h3>ChurnZero's REST API already writes to Accounts and Contacts. Our own note called it read only.</h3>
+  <p>ChurnZero's HTTP API, documented at support.churnzero.com and authenticated with an account level appKey, exposes <code>setAttribute</code>, <code>incrementAttribute</code> and <code>trackEvent</code> endpoints that create and update Account and Contact records. ChurnZero's own integration guide states plainly: &ldquo;we only allow updates to Accounts and Contacts using our API and Javascript.&rdquo; Our Aug 21, 2026 registry note described this same API as read only, with writes handled by a separate ingestion API whose agent-scoped use was undocumented. That was a misread: the write capability it was describing is this API, not a separate one, and it has been documented the whole time. No roles, scopes, or permission tiers are documented beyond the appKey itself, and the API's response format (every call returns HTTP 200 with a 1x1 tracking pixel) gives no indication of whether a write actually succeeded.</p>
+  <p class="sig-take"><b>Why it matters:</b> this is a correction to our own research rather than a vendor announcement, and it moves ChurnZero's Agent write access grade from Unclear to Documented &mdash; the registry's aggregate write-access count rises to 34 of 43. It does not touch ChurnZero's MCP status: Agentic Essentials and ChurnZero Connect (MCP) remain verifiable only through an Aug 2026 press release, with zero technical documentation behind the AI-specific interface. The broader lesson travels past ChurnZero: a vendor's plain old REST API, built with no AI framing at all, often already clears the &ldquo;documented write access&rdquo; bar this registry checks for, while the newer, flashier MCP server sitting next to it gets none of its own documentation. Grading the boring API honestly matters as much as catching the undocumented new one.</p>
+  <p class="sig-src">Source: <a href="https://support.churnzero.com/hc/en-us/articles/360003183171-Integrate-ChurnZero-using-HTTP-API" target="_blank" rel="noopener nofollow">ChurnZero: Integrate ChurnZero using HTTP API</a> &middot; <a href="https://churnzero.com/press-release/churnzero-launches-agentic-essentials/" target="_blank" rel="noopener nofollow">ChurnZero: Agentic Essentials press release</a></p>
+</article>
+<article class="sig" id="item-02">
+  <div class="sig-head"><span class="sig-num">02</span><span class="tag tag-agentic-mid">Layer 9 &middot; CRM &amp; Pipeline</span></div>
+  <h3>HubSpot's AI connectors get a read-only key to Sensitive Data. The write surface doesn't move.</h3>
+  <p>HubSpot's Oct 30, 2026 &ldquo;October 2026 Rollup&rdquo; changelog entry opens a new, opt-in permission: Super Admins can now let supported AI connectors read Sensitive Data properties and engagements that were previously blocked outright. ChatGPT, Claude and Copilot get both Sensitive Data properties and engagements; Gemini and HubSpot's own Remote MCP server get engagements only. The page states directly that &ldquo;access is read-only,&rdquo; and turning it on requires disconnecting and reauthenticating each connector under Settings &gt; Integrations &gt; Connected Apps, with new permissions taking up to two hours to propagate.</p>
+  <p class="sig-take"><b>Why it matters:</b> HubSpot was already Official, Documented and Documented across all three registry columns, and nothing here changes that grade &mdash; this is new read access, not a new write verb, so the row re-dates without a status move. What it does show is a vendor treating Sensitive Data as a separate, higher-bar permission tier from ordinary CRM write access, gated connector by connector rather than granted the moment an app connects. That is a more conservative default than most of the write-access rows already Documented in this registry, and it is worth watching whether other vendors sitting on sensitive fields (payroll, health, compensation) adopt the same split before they ever get near write access at all.</p>
+  <p class="sig-src">Source: <a href="https://developers.hubspot.com/changelog/october-2026-rollup" target="_blank" rel="noopener nofollow">HubSpot developer changelog: October 2026 Rollup</a></p>
+</article>
+</section>
+
+<section class="section-narrow" style="padding-top:0;">
+  <p class="section-label">Registry moves</p>
+  <div class="prose">
+    <p>Two rows re-date this week, to 6 November 2026, one with a grade change. ChurnZero's Agent write access grade moves from Unclear to Documented after we corrected our own Aug 21 note, which had described its HTTP API as read only; its MCP status is unchanged (still claimed, undocumented). HubSpot's row is re-dated without a grade change, noting the Oct 30, 2026 Sensitive Data read permission for AI connectors.</p>
+    <p>The registry's aggregate figures move with it: 27 of 43 vendors still publish an official MCP server, and 34 of 43 (up from 33) now document agent write access. The single zero-interface category, Sales Compensation &amp; Incentive Management, is unchanged.</p>
+  </div>
+</section>
+
+<div class="band">
+  <div class="band-inner">
+    <div>
+      <h2>Signal lands weekly. The registry updates with it.</h2>
+      <p class="band-sub">Layer tagged, evidence linked. If something here is wrong or out of date, tell us and we will re check and re date the row.</p>
+    </div>
+    <a class="btn" href="/registry.html">Open the registry &rarr;</a>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">The Agentic Stack</div>
+        <p class="footer-sub">Reviews are independently researched: see our <a href="/disclosure.html">disclosure</a>. Published by <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman</a>.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <p class="footer-col-h">Site</p>
+          <div class="footer-col">
+            <a href="/registry.html">Registry</a>
+            <a href="/signal/">Signal</a>
+            <a href="/commercial-readiness.html">Commercial Readiness</a>
+            <a href="/content.html">Content</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-h">About</p>
+          <div class="footer-col">
+            <a href="/about.html">Methodology</a>
+            <a href="/disclosure.html">Disclosure</a>
+            <a href="mailto:fessal@agenticreadystack.com">Contact</a>
+            <a href="https://agenticcommercialmodel.com/" target="_blank" rel="noopener">Fessal Rahman ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Agentic Stack.</span>
+      <span>Every claim links to the document it rests on.</span>
+    </div>
+  </div>
+</footer>
+
+<script defer src="/site.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
